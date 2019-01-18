@@ -28,8 +28,8 @@
 % Commands to describe key development tasks
 
 % --> Running gatorgrader.sh
-\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
-\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+\newcommand{\gatorgraderstart}{\command{gradle grade}}
+\newcommand{\gatorgradercheck}{\command{gradle grade}}
 
 % --> Compiling and running program with gradle
 \newcommand{\gradlebuild}{\command{gradle build}}
@@ -42,8 +42,9 @@
 \newcommand{\gitcommitfile}[1]{\command{git commit #1}}
 \newcommand{\gitaddfile}[1]{\command{git add #1}}
 
-\newcommand{\gitadd}{\command{git add}} \newcommand{\gitcommit}{\command{git
-commit}} \newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
 \newcommand{\gitcommitmainprogram}{\command{git commit src/www/answers.md -m
@@ -210,78 +211,118 @@ command in the terminal, it would look like:
   git clone git@github.com:Allegheny-Computer-Science-302-S2019/computer-science-302-spring-2019-practical-1-gkapfham.git
 \end{lstlisting}
 
-After this command finishes, you can use \command{cd} to change into the new directory. What files and directories do
-you see? What do you think is their purpose? Please ask questions if you have any!
+After this command finishes, you can use \command{cd} to change into the new
+directory. What files and directories do you see? What do you think is their
+purpose? Please ask questions if you have any!
 
 \section*{Using Markdown to Create a Web Site With an Image}
 
-In order view the source code of a web site or a Markdown-based writing assignment, you need a text editor. There are
-many different text editors on your workstation and you should feel free to explore these on your own. Since it is a
-powerful text editor known for helping computer scientists ``edit text at the speed of thought'', in this class we will
-often use the text editor called \command{gvim}. Today, you will view and improve your first web site in {\tt gvim}! To
-load the source code of today's web site into \program{gvim}, you should type \command{gvim src/www/answers.md} in your
-terminal window. This should cause a new window, the \program{gvim} text editor, to appear on your computer's screen. If
-your \program{gvim} screen is blank, then this means that you did not run it from the directory that contains the
-starting source code. Make sure that you use the \program{cd} command to go into this assignment's repository! Please
-talk with the course instructor if you cannot access the provided source code.
+In order view the source code of a web site or a Markdown-based writing
+assignment, you need a text editor. There are many different text editors on
+your workstation and you should feel free to explore these on your own. Since it
+is a powerful text editor known for helping computer scientists ``edit text at
+the speed of thought'', in this class we will often use the text editor called
+\command{gvim}. Please note that you may also use other text editors, as
+appropriate. To load the source code of today's web site into \program{gvim},
+you should type \command{gvim src/www/answers.md} in your terminal window. This
+should cause a new window, the \program{gvim} text editor, to appear on your
+computer's screen. If your \program{gvim} screen is blank, then this means that
+you did not run it from the directory that contains the starting source code.
+Make sure that you use the \program{cd} command to go into this assignment's
+repository! Please talk with the course instructor if you cannot access the
+provided source code.
 
-This practical assignment invites you to implement a web site that displays a paragraph and an image. First, you should
-edit the header at the top of the file to include your name. Next, you should go below the header and, keeping a space
-between it and your paragraph, write a paragraph that again includes a link to the course web site and explains that
-this practical assignment is designed to help you learn about images and to reflect on the laboratory assignment that
-you started. Make sure that you refer to the GitHub Guide for Markdown to learn how to create headers and links in this
-file! After you have finished this task, please continue to edit the next two subsections of the web site, explaining
-your emotions when working on the first laboratory assignment and then linking to an image that best expresses those
-emotions. Please notice that the provided code does not correctly link to and display an image. So, to find your own
-image, please search through the Flickr Creative Commons, available at \url{https://www.flickr.com/creativecommons/},
-looking for an image that is suitable for a classroom setting. Now, locate the link for an image in Flickr by clicking
-the download button, selecting ``View all sizes'', copying an image link that will best fit your web site, and adding it
-to your Markdown code. Note that you do not have to download this image to your computer. Please see the instructor or a
-teaching assistant if you are stuck on this step!
+This practical assignment invites you to implement a web site that displays a
+paragraph and an image. First, you should edit the header at the top of the file
+to include your name. Next, you should go below the header and, keeping a space
+between it and your paragraph, write a paragraph that again includes a link to
+the course web site and explains the relevant details that you learned about
+this course from reading the syllabus. This paragraph should also explain the
+theme that you may pursue in your web design portfolio.
+%
+Make sure that you refer to the GitHub Guide for Markdown to learn how to create
+headers and links in this file!
+%
+After you have finished this task, please continue to edit the next two
+subsections of the web site, explaining all of the other requested details.
+Please notice that the provided code does not correctly link to and display an
+image. So, to find your own image, please search through the Flickr Creative
+Commons, available at \url{https://www.flickr.com/creativecommons/}, looking for
+an image that is suitable for a classroom setting.
+%
+Now, locate the link for an image in Flickr by clicking the download button,
+selecting ``View all sizes'', copying an image link that will best fit your web
+site, and adding it to your Markdown code. Note that you do not have to download
+this first image to your computer. But, you should add to your GitHub repo and
+then reference in your Markdown the image that you use for your GitHub profile.
+%
+This step will require you to learn how to use the \gitadd{} command.
+%
+Please note that these image files must be in a specific format --- if they are
+not you may need to learn how to use the \command{convert} tool in your
+terminal window. Talk to the instructor if you have any questions!
 
-Finally, you are ready to practice using new tools that convert your Markdown file into HTML and run a web server to
-make your web site available in a browser. To convert your Markdown, make sure that you are in the ``home directory'' of
-your GitHub repository and type \command{pandoc src/www/answers.md -o src/www/answers.html}. Now, you can run your web
-server by typing the command \command{serve src/www 4250}. At this point, you can start your web browser and go to the
-web site \url{http://localhost:4250/answers.html}. Does your new web site look correct? Can you see the image? If not,
-then continue to edit and convert it until the files are correct. Since this is our first practical assignment and you
-are still learning how to use the appropriate hardware and software, don't become frustrated if you make a mistake.
-Instead, use your mistakes as an opportunity for learning both about the necessary web development technology and the
-background and expertise of the other students in the class, the teaching assistants, and the course instructor.
+% Please see the
+% instructor or a teaching assistant if you are stuck on this step!
+
+Finally, you are ready to practice using new tools that convert your Markdown
+file into HTML and run a web server to make your web site available in a
+browser. To convert your Markdown, make sure that you are in the ``home
+directory'' of your GitHub repository and type \command{pandoc
+src/www/answers.md -o src/www/answers.html}. Now, you can run your web server by
+typing the command \command{serve src/www 4250}. At this point, you can start
+your web browser and go to the web site
+\url{http://localhost:4250/answers.html}. Does your new web site look correct?
+Can you see the image? If not, then continue to edit and convert it until the
+files are correct. Since this is our first practical assignment and you are
+still learning how to use the appropriate hardware and software, don't become
+frustrated if you make a mistake. Instead, use your mistakes as an opportunity
+for learning both about the necessary web development technology and the
+background and expertise of the other students in the class, the teaching
+assistants, and the course instructor.
 
 \section*{Checking the Correctness of Your Web Site and Writing}
 
-The Markdown file that contains your reflection must adhere to the standards described in the Markdown Syntax Guide
-\url{https://guides.github.com/features/mastering-markdown/}. Finally, your \reflection{} file should adhere to the
-Markdown standards established by the \step{Markdown linting} tool available at
-\url{https://github.com/markdownlint/markdownlint/} and the writing standards set by the \step{prose linting} tool from
-\url{http://proselint.com/}. Instead of requiring you to manually check that your deliverables adhere to these
-industry-accepted standards, the GatorGrader tool that you will use in this practical assignment makes it easy for you
-to automatically check if your submission meets the standards for correctness. For instance, GatorGrader will check to
-ensure that \mainprogram{} has the required two subsections created with the \command{##} code.
+The Markdown file that contains your reflection must adhere to the standards
+described in the Markdown Syntax Guide
+\url{https://guides.github.com/features/mastering-markdown/}. Finally, your
+\reflection{} file should adhere to the Markdown standards established by the
+\step{Markdown linting} tool available at
+\url{https://github.com/markdownlint/markdownlint/} and the writing standards
+set by the \step{prose linting} tool from \url{http://proselint.com/}. Instead
+of requiring you to manually check that your deliverables adhere to these
+industry-accepted standards, the GatorGrader tool that you will use in this
+practical assignment makes it easy for you to automatically check if your
+submission meets the standards for correctness. For instance, GatorGrader will
+check to ensure that \mainprogram{} has the required two subsections created
+with the \command{##} code.
+%
+To get started with the use of GatorGrader, type the command \gatorgraderstart{}
+in your terminal window. If you have mistakes in your assignment, then you will
+need to review GatorGrader's output, find the mistake, and try to fix it. Once
+your program is building correctly, fulfilling at least some of the assignment's
+requirements, you should transfer your files to GitHub using the \gitcommit{}
+and \gitpush{} commands. For example, if you want to signal that the
+\mainprogramsource{} file has been changed and is ready for transfer to GitHub
+you would first type \gitcommitmainprogram{} in your terminal, followed by
+typing \gitpush{} to perform the transfer. For this assignment you will also
+have to use the \gitadd{} command.
 
-To get started with the use of GatorGrader, type the command \gatorgraderstart{} in your terminal window. Once this step
-completes you can type \gatorgradercheck{}. If your work does not meet all of the assignment's requirements, then you
-will see the following output in your terminal: \command{Overall, are there any mistakes in the assignment? Yes}. If you
-do have mistakes in your assignment, then you will need to review GatorGrader's output, find the mistake, and try to fix
-it. Once your static web site displays correctly, fulfilling at least some of the assignment's requirements, you should
-transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands. For example, if you want to signal that
-the \mainprogramsource{} file has been changed and is ready for transfer to GitHub you would first type
-\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and checking to see that the transfer to GitHub
-is successful. If you notice that transferring your code or writing to GitHub did not work correctly, then please read
-the messages in your terminal and try to determine why, asking a teaching assistant or the course instructor for
-assistance, if necessary.
-
-After the course instructor enables \step{continuous integration} with a system called Travis CI, when you use the
-\gitpush{} command to transfer your source code to your GitHub repository, Travis CI will initialize a \step{build} of
-your assignment, checking to see if it meets all of the requirements. If both your source code and writing meet all of
-the established requirements, then you will see a green \checkmark{} in the listing of commits in GitHub after awhile.
-If your submission does not meet the requirements, a red \naughtmark{} will appear instead. The instructor will reduce a
-student's grade for this assignment if the red \naughtmark{} appears on the last commit in GitHub immediately before the
-assignment's due date. Yet, if the green \checkmark{} appears on the last commit in your GitHub repository, then you
-satisfied all of the main checks, thereby allowing the course instructor to evaluate other aspects of your source code
-and writing, as further described in the \step{Evaluation} section of this assignment sheet. Unless you provide the
-instructor with documentation of the extenuating circumstances that you are facing, no late work will be considered
+After the course instructor enables \step{continuous integration} with a system
+called Travis CI, when you use the \gitpush{} command to transfer your source
+code to your GitHub repository, Travis CI will initialize a \step{build} of your
+assignment, checking to see if it meets all of the requirements. If both your
+source code and writing meet all of the established requirements, then you will
+see a green \checkmark{} in the listing of commits in GitHub after awhile. If
+your submission does not meet the requirements, a red \naughtmark{} will appear
+instead. The instructor will reduce a student's grade for this assignment if the
+red \naughtmark{} appears on the last commit in GitHub immediately before the
+assignment's due date. Yet, if the green \checkmark{} appears on the last commit
+in your GitHub repository, then you satisfied all of the main checks, thereby
+allowing the course instructor to evaluate other aspects of your source code and
+writing, as further described in the \step{Evaluation} section of this
+assignment sheet. Unless you provide the instructor with documentation of the
+extenuating circumstances that you are facing, no late work will be considered
 towards your grade for this practical assignment.
 
 \section*{Summary of the Required Deliverables}
@@ -293,8 +334,13 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
 
 \setlength{\itemsep}{0in}
 
-\item A properly formatted and correct version of \mainprogramsource{} that both meets all of the established
-  requirements and produces the correct HTML and the desired static web site.
+\item A properly formatted and correct version of \mainprogramsource{} that both
+  meets all of the established requirements and produces the correct HTML and
+  the desired static web site.
+
+\item A local image that you will use as your GitHub profile picture. Along with
+  uploading it to GitHub, please store this image in the
+  \command{src/www/images} directory that you create.
 
 \end{enumerate}
 
