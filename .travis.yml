@@ -1,0 +1,16 @@
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
+  texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
+  texlive-latex-recommended
+script:
+- mkdir _build
+- latexmk -pdf -outdir=_build practical01/cs302S2019_practical01.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: mrtJ894fXLpCdE9aZ4BU/WCM8P488lVWW6OqX/Qgr1zUA6vHLe2NIS0cawuQDsNnTH8F/4/Xo8FggeNs+uleHEUij0tU7hrWtsbIJyfhDRfKTwq5guRKndWhTRc/mGsKGpz5IG+y881GjVckSZJuE8woUQVLv824nbTlvRqvTqwUNaq6FtdXSbfT+vuF1g4VLlEG+zWZXEeHxirWNmgvd4nuny0XJ9JiDr3zNr6ELwRTF2Z7mgupnTThf+VdLFBJCNce93o0Nt6P9fwTPr7uhYzm0utVP/C45eXPzBGV21yqvCGefSBs5XWxi7p3cQ1LkgJMXrcJn5gOARtvfDSeOe8Ho+o/xvNHO27z6/1mmEnNynYCvjVkmsPi04SXeDgRgSdY3+n3796ZnX4ZL1lROwJLcFJ+xu1bk7GT3V51y5oTDPS+LCxnA7pkeKtnjtgkZXf91/SQQ5rWaWT1JVZDAKvNpA25R2bXDDGFQUcNPirU8idtXhAs+7pAWu11xxyQ98X5HX0Z8VUfvWbVclkhxxuj72EMy5pzLUX0S+kL/nuUZqExbChT1V4fvzZPnalEO4WO58I3zYhw4pyEQKa9pQIy/j8kPhpmtMce/vGhoQh87SadOxyFQELwAanPSTL4p22LIUwkjKKDWNChp9Fo0BBHdCo1mYFpDk/aoD+vNBA=
+  file:
+    - _build/cs302S2019_practical01.pdf
+  skip_cleanup: true
+  on:
+    tags: true
