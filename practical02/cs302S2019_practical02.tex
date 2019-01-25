@@ -81,7 +81,7 @@ descriptive commit message"}}
 
 \fancyhf{}
 \rhead{Computer Science 302}
-\lhead{Laboratory Assignment \assignmentnumber{}}
+\lhead{Practical Assignment \assignmentnumber{}}
 \rfoot{Page \thepage}
 \lfoot{\duedate}
 
@@ -299,63 +299,74 @@ submission meets the standards for correctness. For instance, GatorGrader will
 check to ensure that \mainprogram{} has the required number of subsections
 created with the \command{##} code.
 
-To get started with the use of GatorGrader, type the command \gatorgraderstart{} in your terminal window. Once this step
-completes you can type \gatorgradercheck{}. If your work does not meet all of the assignment's requirements, then you
-will see the following output in your terminal: \command{Overall, are there any mistakes in the assignment? Yes}. If you
-do have mistakes in your assignment, then you will need to review GatorGrader's output, find the mistake, and try to fix
-it. Once your static web site displays correctly, fulfilling at least some of the assignment's requirements, you should
-transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands. For example, if you want to signal that
-the \mainprogramsource{} file has been changed and is ready for transfer to GitHub you would first type
-\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and checking to see that the transfer to GitHub
-is successful. If you notice that transferring your code or writing to GitHub did not work correctly, then please read
-the messages in your terminal and try to determine why, asking a teaching assistant or the course instructor for
-assistance, if necessary.
+To get started with the use of GatorGrader, type the command
+\gatorgraderstart{} in your terminal window. If you have mistakes in your
+assignment, then you will need to review GatorGrader's output, find the
+mistake, and try to fix it. Once your program is building correctly, fulfilling
+at least some of the assignment's requirements, you should transfer your files
+to GitHub using the \gitcommit{} and \gitpush{} commands. For example, if you
+want to signal that the \mainprogramsource{} file has been changed and is ready
+for transfer to GitHub you would first type \gitcommitmainprogram{} in your
+terminal, followed by typing \gitpush{} to perform the transfer. Please see the
+instructor if you cannot use GitHub.
 
-After the course instructor enables \step{continuous integration} with a system called Travis CI, when you use the
-\gitpush{} command to transfer your source code to your GitHub repository, Travis CI will initialize a \step{build} of
-your assignment, checking to see if it meets all of the requirements. If both your source code and writing meet all of
-the established requirements, then you will see a green \checkmark{} in the listing of commits in GitHub after awhile.
-If your submission does not meet the requirements, a red \naughtmark{} will appear instead. The instructor will reduce a
-student's grade for this assignment if the red \naughtmark{} appears on the last commit in GitHub immediately before the
-assignment's due date. Yet, if the green \checkmark{} appears on the last commit in your GitHub repository, then you
-satisfied all of the main checks, thereby allowing the course instructor to evaluate other aspects of your source code
-and writing, as further described in the \step{Evaluation} section of this assignment sheet. Unless you provide the
-instructor with documentation of the extenuating circumstances that you are facing, no late work will be considered
+After the course instructor enables \step{continuous integration} with a system
+called Travis CI, when you use the \gitpush{} command to transfer your source
+code to your GitHub repository, Travis CI will initialize a \step{build} of your
+assignment, checking to see if it meets all of the requirements. If both your
+source code and writing meet all of the established requirements, then you will
+see a green \checkmark{} in the listing of commits in GitHub after awhile. If
+your submission does not meet the requirements, a red \naughtmark{} will appear
+instead. The instructor will reduce a student's grade for this assignment if the
+red \naughtmark{} appears on the last commit in GitHub immediately before the
+assignment's due date. Yet, if the green \checkmark{} appears on the last commit
+in your GitHub repository, then you satisfied all of the main checks, thereby
+allowing the course instructor to evaluate other aspects of your source code and
+writing, as further described in the \step{Evaluation} section of this
+assignment sheet. Unless you provide the instructor with documentation of the
+extenuating circumstances that you are facing, no late work will be considered
 towards your grade for this practical assignment.
 
 \section*{Summary of the Required Deliverables}
 
-\noindent Students do not need to submit printed source code or technical writing for any assignment in this course.
-Instead, this assignment invites you to submit, using GitHub, the following deliverables.
+\noindent Students do not need to submit printed source code or technical
+writing for any assignment in this course. Instead, this assignment invites you
+to submit, using GitHub, the following deliverables.
 
 \begin{enumerate}
 
 \setlength{\itemsep}{0in}
 
-\item A properly formatted and correct version of \mainprogramsource{} that both meets all of the established
-  requirements and produces the correct HTML and the desired static web site.
+\item A properly formatted and correct version of \mainprogramsource{} that both
+  meets all of the established requirements and produces the correct HTML and
+  the desired static web site.
 
 \end{enumerate}
 
-\section*{Evaluation of Your Practical Assignment}
+\section*{Evaluation of Your Practical Assignment!}
 
-Using a report that the instructor shares with you through the commit log in GitHub, you will privately received a grade
-on this assignment and feedback on your submitted deliverables. Your grade for the assignment will be a function of the
-whether or not it was submitted in a timely fashion and if your program received a green \checkmark{} indicating that it
-met all of the requirements. Other factors will also influence your final grade on the assignment. In addition to
-studying the efficiency and effectiveness of your Markdown source code, the instructor will also evaluate the accuracy of
-both your writing and the constructs in your source code. If your submission receives a red \naughtmark{}, the
-instructor will reduce your grade for the assignment while still considering the regularity with which you committed to
-your GitHub repository and the overall quality of your partially completed work. Please see the instructor if you have
+Using a report that the instructor shares with you through the commit log in
+GitHub, you will privately received a grade on this assignment and feedback on
+your submitted deliverables. Remember, your grade for the assignment will be a
+function of the whether or not it was submitted in a timely fashion and if your
+program received a green \checkmark{} indicating that it met all of the
+requirements. Other factors will also influence your final grade on the
+assignment. In addition to studying the efficiency and effectiveness of your
+Markdown source code, the instructor will also evaluate the accuracy of both
+your writing and the constructs in your source code. If your submission
+receives a red \naughtmark{}, then you will not receive the completion grade
+for this practical assignment. Please see the course instructor if you have
 questions about the evaluation of this practical assignment.
 
-% \section*{Adhering to the Honor Code}
-
-% In adherence to the Honor Code, students should complete this assignment on an individual basis. While it is appropriate
-% for students in this class to have high-level conversations about the assignment, it is necessary to distinguish
-% carefully between the student who discusses the principles underlying a problem with others and the student who produces
-% assignments that are identical to, or merely variations on, someone else's work. Deliverables (e.g., HTML source code or
-% Markdown-based technical writing) that are nearly identical to the work of others will be taken as evidence of violating
-% the \mbox{Honor Code}. Please see the course instructor if you have questions about this policy.
+In adherence to the Honor Code, students should complete this assignment on an
+individual basis. While it is appropriate for students in this class to have
+high-level conversations about the assignment, it is necessary to distinguish
+carefully between the student who discusses the principles underlying a
+problem with others and the student who produces assignments that are
+identical to, or merely variations on, someone else's work. Deliverables
+(e.g., HTML source code or Markdown-based technical writing) that are nearly
+identical to the work of others will be taken as evidence of violating the
+\mbox{Honor Code}. Please see the course instructor if you have questions
+about this policy.
 
 \end{document}
