@@ -109,8 +109,8 @@ software development programs such as a ``terminal window'' and a ``text
 editor''. Next, you will learn how to write a Markdown document and
 automatically convert it to HTML, specifically investigating the inclusion of a
 cascading style sheet (CSS) to the generated HTML. Finally, you will learn more
-about running a web server and using an automated grading tool to assess your
-completion of a web development project.
+about running a local web server and using an automated grading tool to assess
+your completion of a web development project.
 
 \section*{Suggestions for Success}
 
@@ -246,19 +246,18 @@ assistant}.
 In order view the source code of a web site or a Markdown-based writing
 assignment, you need a text editor. Since it is a powerful text editor known for
 helping computer scientists ``edit text at the speed of thought'', in this class
-we will often use the text editor called \command{gvim}. Today, you will view
-and improve web site source code in {\tt gvim}. Making sure you are in the
-directory for this assignment, you should type \command{gvim
-src/www/html/answers.md} in your terminal. This should cause a new window, the
-\program{gvim} text editor, to appear on your screen. Remember, since
-\program{gvim} is a modal editor, you may notice that if you start typing,
-nothing appears (unless you happen to hit certain letters such as \command{i},
-\command{o}, \command{a}, and a few others). This is because you are not in
-``insert mode.'' To get into insert mode, just type the letter \command{i}
-(lower case). Once you do this, the window should show the word
-\command{--INSERT--} in the lower left corner. Students who are having
-difficulties learning how to use \command{gvim} should keep trying---but you can
-also use the Atom text editor in this class.
+we will often use the text editor called \command{gvim}. Today, you can view and
+improve web site source code in {\tt gvim}. Making sure you are in the directory
+for this assignment, you should type \command{gvim src/www/html/answers.md} in
+your terminal. This should cause a new window, the \program{gvim} text editor,
+to appear on your screen. Remember, since \program{gvim} is a modal editor, you
+may notice that if you start typing, nothing appears (unless you happen to hit
+certain letters such as \command{i}, \command{o}, \command{a}, and a few
+others). This is because you are not in ``insert mode.'' To get into insert
+mode, just type the letter \command{i} (lower case). Once you do this, the
+window should show the word \command{--INSERT--} in the lower left corner.
+Students who are having difficulties learning how to use \command{gvim} should
+keep trying---but you can also use the Atom text editor in this class.
 
 This laboratory assignment invites you to implement a web site that displays
 headers, subheaders, paragraphs, links, inline code segments, ``fenced'' code
@@ -273,36 +272,36 @@ with a link to \url{https://github.com/otsaloma/markdown-css}, that you are
 using externally provided cascading style sheets to influence the display of the
 generated HTML.
 
-You will notice that the \mainprogram{} also asks you to refer to source code
-in both an ``inline'' and ``fenced'' fashion. This first type of formatting
-will allow you to refer to the name of a file and see it appear in a distinct
-font. For instance, a filename that is surrounded by backticks would be
-displayed as an inline code segment. Alternatively, a fenced code segment
-starts with three backticks, includes source code or program output, and then
-concludes with three more backticks. For instance, you will use fenced code to
-display terminal commands in your web site. Your \mainprogram{} should also
-include a table that reports on your understanding of the content in Table 2.1
-of your textbook. Specifically, you should pick at least three error codes and
-explain them using a Markdown table with the same format as Table 2.1. Please
-refer to the ``Markdown Syntax'' guide for useful examples and talk with the
-instructor if you have questions about using these constructs.
+You will notice that the \mainprogram{} also asks you to refer to source code in
+both an ``inline'' and ``fenced'' fashion. This first type of formatting will
+allow you to refer to the name of a file and see it appear in a distinct font.
+For instance, a filename that is surrounded by backticks would be displayed as
+an inline code segment. Alternatively, a fenced code segment starts with three
+backticks, includes source code or program output, and then concludes with three
+more backticks. For instance, you will use fenced code to display terminal
+commands in your web site. Your \mainprogram{} should also include a table that
+reports on your understanding of the content in Table 2.1 of your textbook.
+Specifically, you should pick at least five error codes and explain them using a
+Markdown table with the same format as Table 2.1. Please refer to the ``Markdown
+Syntax'' guide for useful examples and talk with the instructor if you have
+questions about using these constructs.
 
-Whenever you are finished typing text in \program{gvim}, press the ESC key
-located in the upper left corner of the keyboard. This should remove the word
-\command{--INSERT--} from the bottom of the screen and take you out of insert
-mode. Use the \option{File/Save} menu to save your program. Alternatively, if
-you would like to use the keyboard to save your file, you can press
-\command{:w} when you are not in insert mode. Leaving the {\tt gvim} window
-open, go back to your terminal window. Now, you are ready to use the tool that
-converts your Markdown file into HTML and run a web server to make your web
-site available in a browser. To convert your Markdown, make sure that you are
-in the ``home directory'' of your GitHub repository and type one the following
-commands. Note that these commands are different than what you used in a
-previous laboratory assignment because they specify that output must adhere to
-the HTML5 standard and apply a cascading style sheet in a single (i.e.,
-``self-contained'') file. Please notice that the specifying a different
-\command{--css} argument will cause the style of the generated HTML to vary.
-Now, let's view this web site in different styles!
+Whenever you are finished typing text in \program{gvim} (or, Atom or another
+editor), press the ESC key located in the upper left corner of the keyboard.
+This should remove the word \command{--INSERT--} from the bottom of the screen
+and take you out of insert mode. Use the \option{File/Save} menu to save your
+program. Alternatively, if you would like to use the keyboard to save your file,
+you can press \command{:w} when you are not in insert mode. Leaving the {\tt
+gvim} window open, go back to your terminal window. Now, you are ready to use
+the tool that converts your Markdown file into HTML and run a web server to make
+your web site available in a browser. To convert your Markdown, make sure that
+you are in the ``home directory'' of your GitHub repository and type one the
+following commands. Note that these commands are different than what you used in
+a previous assignment because they specify that output must adhere to the HTML5
+standard and apply a cascading style sheet in a ``self-contained'' file. Please
+notice that the specifying a different \command{--css} argument will cause the
+style of the generated HTML to vary. Now, let's view this web site in different
+styles!
 
 \vspace*{-.05in}
 
