@@ -217,12 +217,12 @@ automatically receive a failing grade for it.
 Before you move to the next step of this assignment, please make sure that you
 read all of the content on the web site for your new GitHub repository, paying
 close attention to the technical details about the commands that you will type
-and the output that your program must produce. Now you are ready to download the
-starting materials to your laboratory computer. Click the ``Clone or download''
-button and, after ensuring that you have selected ``Clone with SSH'', please
-copy this command to your clipboard. To enter into your course directory you
-should now type \command{cd cs302S2019}. Now, by typing \command{git clone} in
-your terminal and then pasting in the string that you copied from the GitHub
+and the output that your web page must produce. Now you are ready to download
+the starting materials to your laboratory computer. Click the ``Clone or
+download'' button and, after ensuring that you have selected ``Clone with SSH'',
+please copy this command to your clipboard. To enter into your course directory
+you should now type \command{cd cs302S2019}. Now, by typing \command{git clone}
+in your terminal and then pasting in the string that you copied from the GitHub
 site you will download all of the code for this assignment. For instance, if the
 course instructor ran the \command{git clone} command in the terminal, it would
 look like:
@@ -236,7 +236,8 @@ directory. If you want to \step{go back} one directory from your current
 location, then you can type the command \command{cd ..}. Please continue to use
 the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see?
-What do you think is their purpose? Please note that this assignment includes
+What do you think is their purpose? What directory will function as the ``root''
+of the web server for this assignment? Please note that this assignment includes
 many files, including two cascading style sheet (CSS) files. Spend some time
 exploring, sharing your discoveries with a neighbor and a \mbox{teaching
 assistant}.
@@ -290,7 +291,7 @@ Whenever you are finished typing text in \program{gvim} (or, Atom or another
 editor), press the ESC key located in the upper left corner of the keyboard.
 This should remove the word \command{--INSERT--} from the bottom of the screen
 and take you out of insert mode. Use the \option{File/Save} menu to save your
-program. Alternatively, if you would like to use the keyboard to save your file,
+code. Alternatively, if you would like to use the keyboard to save your file,
 you can press \command{:w} when you are not in insert mode. Leaving the {\tt
 gvim} window open, go back to your terminal window. Now, you are ready to use
 the tool that converts your Markdown file into HTML and run a web server to make
@@ -361,21 +362,16 @@ with the \command{##} code. It will also check to ensure that you create the
 required number of fenced source code blocks.
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{}
-in your terminal window. Once this step completes you can type
-\gatorgradercheck{}. If your work does not meet all of the assignment's
-requirements, then you will see the following output in your terminal:
-\command{Overall, are there any mistakes in the assignment? Yes}. If you do have
-mistakes in your assignment, then you will need to review GatorGrader's output,
-find the mistake, and try to fix it. Once your static web site displays
-correctly, fulfilling at least some of the assignment's requirements, you should
-transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands.
-For example, if you want to signal that the \mainprogramsource{} file has been
-changed and is ready for transfer to GitHub you would first type
-\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
-checking to see that the transfer to GitHub is successful. If you notice that
-transferring your code or writing to GitHub did not work, then please read the
-messages in your terminal and try to determine why, asking the course instructor
-for assistance, if necessary.
+in your terminal window. If you have mistakes in your assignment, then you will
+need to review GatorGrader's output, find the mistake, and try to fix it. Once
+your web page is displaying correctly, fulfilling at least some of the
+assignment's requirements, you should transfer your files to GitHub using the
+\gitcommit{} and \gitpush{} commands. For example, if you want to signal that
+the \mainprogramsource{} file has been changed and is ready for transfer to
+GitHub you would first type \gitcommitmainprogram{} in your terminal, followed
+by typing \gitpush{} to perform the transfer. For this assignment you will also
+have to use the \gitadd{} command. Please see the instructor if you have
+questions about these steps!
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
@@ -403,35 +399,46 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
 
 \setlength{\itemsep}{0in}
 
-\item Stored in \reflection{}, a one-paragraph reflection on the commands that you typed in \command{gvim} and the
-  terminal window. This Markdown-based document should explain the input, output, and behavior of each command and the
-  challenges that you confronted when using it. For every challenge that you encountered, please explain your solution
-  for it.
+\item Stored in \reflection{}, a one-paragraph reflection on the commands that
+  you typed in \command{gvim} and the terminal window. This Markdown-based
+  document should explain the input, output, and behavior of each command and
+  the challenges that you confronted when using it. For every challenge that you
+  encountered, please explain your solution for it.
 
-\item A properly formatted and correct version of \mainprogramsource{} that both meets all of the established
-  requirements and produces the correct HTML and the desired static web site.
+\item A properly formatted and correct version of \mainprogramsource{} that both
+  meets all of the established requirements and produces the correct HTML and
+  the desired static web site. Make sure that you know how to style the
+  generated HTML using the two provided CSS files.
 
 \end{enumerate}
 
 \section*{Evaluation of Your Laboratory Assignment}
 
-Using a report that the instructor shares with you through the commit log in GitHub, you will privately received a grade
-on this assignment and feedback on your submitted deliverables. Your grade for the assignment will be a function of the
-whether or not it was submitted in a timely fashion and if your program received a green \checkmark{} indicating that it
-met all of the requirements. Other factors will also influence your final grade on the assignment. In addition to
-studying the efficiency and effectiveness of your Markdown, the instructor will also evaluate the accuracy of both your
-technical writing and the contents of your source code. If your submission receives a red \naughtmark{}, the instructor
-will reduce your grade for the assignment while still considering the regularity with which you committed to your GitHub
-repository and the overall quality of your partially completed work. Please see the instructor if you have questions
-about the evaluation of this laboratory assignment.
+Using a report that the instructor shares with you through the commit log in
+GitHub, you will privately received a grade on this assignment and feedback on
+your submitted deliverables. Your grade for the assignment will be a function of
+the whether or not it was submitted in a timely fashion and if your web page
+received a green \checkmark{} indicating that it met all of the requirements.
+Other factors will also influence your final grade on the assignment. In
+addition to studying the efficiency and effectiveness of your Markdown, the
+instructor will also evaluate the accuracy of both your technical writing and
+the contents of your source code. If your submission receives a red
+\naughtmark{}, the instructor will reduce your grade for the assignment while
+still considering the regularity with which you committed to your GitHub
+repository and the overall quality of your partially completed work. Please see
+the instructor if you have questions about the evaluation of this laboratory
+assignment.
 
 \section*{Adhering to the Honor Code}
 
-In adherence to the Honor Code, students should complete this assignment on an individual basis. While it is appropriate
-for students in this class to have high-level conversations about the assignment, it is necessary to distinguish
-carefully between the student who discusses the principles underlying a problem with others and the student who produces
-assignments that are identical to, or merely variations on, someone else's work. Deliverables (e.g., HTML source code or
-Markdown-based technical writing) that are nearly identical to the work of others will be taken as evidence of violating
-the \mbox{Honor Code}. Please see the course instructor if you have questions about this policy.
+In adherence to the Honor Code, students should complete this assignment on an
+individual basis. While it is appropriate for students in this class to have
+high-level conversations about the assignment, it is necessary to distinguish
+carefully between the student who discusses the principles underlying a problem
+with others and the student who produces assignments that are identical to, or
+merely variations on, someone else's work. Deliverables (e.g., HTML source code
+or Markdown-based technical writing) that are nearly identical to the work of
+others will be taken as evidence of violating the \mbox{Honor Code}. Please see
+the course instructor if you have questions about this policy.
 
 \end{document}
