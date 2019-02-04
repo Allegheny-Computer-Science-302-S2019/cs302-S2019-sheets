@@ -5,6 +5,7 @@ before_install:
 script:
 - mkdir _build
 - latexmk -pdf -outdir=_build lab01/cs302S2019_lab01.tex
+- latexmk -pdf -outdir=_build lab02/cs302S2019_lab02.tex
 - latexmk -pdf -outdir=_build practical01/cs302S2019_practical01.tex
 - latexmk -pdf -outdir=_build practical02/cs302S2019_practical02.tex
 deploy:
@@ -13,6 +14,7 @@ deploy:
     secure: JEuW+vwyiPMDcEIB2cxp/Qx7Z0XhH4yQmzO1ofElzfQNCzMEc0IUlzD0MvlbNPYDR5/KtZTBnngsX1XsAzF1+gzLCyIOEDwbZua7inPMUGaqGOyasctZuyRNsYmEeFVbwd26BYObJTK7/XFea4e1PetELIz5CqdjO13NhGlwZ3i3nXw0uEyk11yW7HjKf/50mFr56KhATSWVOLCWrY7S03neXhAo0lbHgxdKDLMJ/LgiIz5/1m84cpF+MzRn2mPnAAvwlc43jQBEJxk+rr9cv9kPbS35UDYs504y0wAtcgIZqdRx6/hXGpTXHZsym0jKKOgqdOwkQVZCMB/G8pCSaptrjZOpbb11NJocXHOi9LGTeVS8ufNVsTFrP8ukoSQZmMosP032tQZaf+pqxonsXsiMGLGfMMb5NdkSovtKfIoVmMozRk5MAQXN6nu4hDPnb34joRKOCjzWBFYw/Rxpfv6fEBjljYaxwz95qiBNmbM+mWNwIm5R1ikzF+WpcOmPZDD8G7Cpg2QvHLHfTbWDKfRaP380J3sKB3GNkLJhYFXZHEB2oVbg/M8vyHhtRDysnueyog3Ifx4nFREcy0Bfm+0Cq5ok7Tp3DRAuw31d2QKwQtatDy2tlZLx0w3KDm3UPPpqnYJclYFmAGy9ikpWsFw7R+kvBDgHOJ/PX2GdfEY=
   file:
     - _build/cs302S2019_lab01.pdf
+    - _build/cs302S2019_lab02.pdf
     - _build/cs302S2019_practical01.pdf
     - _build/cs302S2019_practical02.pdf
   skip_cleanup: true
