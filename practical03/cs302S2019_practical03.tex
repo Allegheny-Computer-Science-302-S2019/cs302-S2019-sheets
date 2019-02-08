@@ -1,0 +1,361 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{February 11}
+\newcommand{\assignmentassignedate}{February 8}
+\newcommand{\assignmentnumber}{Three}
+
+\newcommand{\labyear}{2019}
+\newcommand{\labdueday}{Monday}
+\newcommand{\labassignday}{Friday}
+\newcommand{\labtime}{9:00 am}
+
+\newcommand{\assigneddate}{Assigned: \labassignday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Due: \labdueday, \assignmentduedate, \labyear{} at \labtime{}}
+
+% Edit these commands to give the name to the main program
+
+\newcommand{\mainprogram}{\lstinline{index.html}}
+\newcommand{\mainprogramsource}{\lstinline{src/www/index.html}}
+
+% Commands to describe key development tasks
+
+% --> Running gatorgrader.sh
+\newcommand{\gatorgraderstart}{\command{gradle grade}}
+\newcommand{\gatorgradercheck}{\command{gradle grade}}
+
+% --> Compiling and running program with gradle
+\newcommand{\gradlebuild}{\command{gradle build}}
+\newcommand{\gradlerun}{\command{gradle run}}
+
+% Commands to describe key git tasks
+
+% NOTE: Could be improved, problems due to nesting
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+\newcommand{\gitcommitmainprogram}{\command{git commit src/www/index.html -m "Your
+descriptive commit message"}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{upquote}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 103}
+\lhead{Laboratory Assignment \assignmentnumber{}}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\labtitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 103\\Web Development\\
+      Spring 2018\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\labtitle{Practical \assignmentnumber{} \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Objectives}
+
+To learn how to use GitHub to access the files for a practical assignment.
+Additionally, to keep learning how to use the Ubuntu operating system and
+programs such as a ``terminal window'' and the ``GVim text editor''. You will
+also continue to practice using Slack to support communication with the teaching
+assistants and the course instructor. Next, you will practice creating ordered
+and unordered lists in HTML and making links to HTML files. You will also
+practice running a web server and using the grading tool to assess your progress
+towards correctly completing the project.
+
+\section*{Suggestions for Success}
+
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+
+\item {\bf Use the laboratory computers}. The computers in this laboratory feature specialized software for completing
+  this course's laboratory and practical assignments. If it is necessary for you to work on a different machine, be sure
+  to regularly transfer your work to a laboratory machine so that you can check its correctness. If you cannot use a
+  laboratory computer and you need help with the configuration of your own laptop, then please carefully explain its
+  setup to a teaching assistant or the course instructor when you are asking questions.
+
+\item {\bf Follow each step carefully}. Slowly read each sentence in the assignment sheet, making sure that you
+  precisely follow each instruction. Take notes about each step that you attempt, recording your questions and ideas and
+  the challenges that you faced. If you are stuck, then please tell a teaching assistant or instructor what assignment
+  step you recently completed.
+
+\item {\bf Regularly ask and answer questions}. Please log into Slack at the start of a laboratory or practical session
+  and then join the appropriate channel. If you have a question about one of the steps in an assignment, then you can
+  post it to the designated channel. Or, you can ask a student sitting next to you or talk with a teaching assistant or
+  the course instructor.
+
+\item {\bf Store your files in GitHub}. Continuing with this laboratory assignment, you will be responsible for storing
+  all of your files (e.g., JavaScript code and Markdown-based writing) in a Git repository using GitHub Classroom.
+  Please verify that you have saved your source code in your Git repository by using \command{git status} to ensure that
+  everything is updated. You can see if your assignment submission meets the established correctness requirements by
+  using the provided checking tools on your local computer and in checking the commits in GitHub.
+
+\item {\bf Keep all of your files}. Don't delete your programs, output files, and written reports after you submit them
+  through GitHub; you will need them again when you study for the quizzes and examinations and work on the other
+  laboratory, practical, and final project assignments.
+
+\item {\bf Back up your files regularly}. All of your files are regularly backed-up to the servers in the Department of
+  Computer Science and, if you commit your files regularly, stored on GitHub. However, you may want to use a flash
+  drive, Google Drive, or your favorite backup method to keep an extra copy of your files on reserve. In the event of
+  any type of system failure, you are responsible for ensuring that you have access to a recent backup copy of all your
+  files.
+
+\item {\bf Explore teamwork and technologies}. While certain aspects of the laboratory assignments will be challenging
+  for you, each part is designed to give you the opportunity to learn both fundamental concepts in the field of computer
+  science and explore advanced technologies that are commonly employed at a wide variety of companies. To explore and
+  develop new ideas, you should regularly communicate with your team and/or the teaching assistants and tutors.
+
+\item {\bf Hone your technical writing skills}. Computer science assignments require to you write technical
+  documentation and descriptions of your experiences when completing each task. Take extra care to ensure that your
+  writing is interesting and both grammatically and technically correct, remembering that computer scientists must
+  effectively communicate and collaborate with their team members and the tutors, teaching assistants, and course
+  instructor.
+
+\item {\bf Review the Honor Code on the syllabus}. While you may discuss your assignments with others, copying source
+  code or writing is a violation of Allegheny College's Honor Code.
+
+\end{itemize}
+
+\section*{Reading Assignment}
+
+If you have not done so already, please read all of the relevant ``GitHub
+Guides'', available at \url{https://guides.github.com/}, that explain how to use
+many of the features that GitHub provides. In particular, please make sure that
+you have read guides such as ``Mastering Markdown'' and ``Documenting Your
+Projects on GitHub''; each of them will help you to understand how to use both
+GitHub and GitHub Classroom. To do well on this assignment, you should also read
+Chapters 1 through 3 in the course textbook, also paying close attention to
+Section 3.5 and Listing 3.2. Please see the instructor or one of the teaching
+assistants if you have questions these reading assignments.
+
+\section*{Accessing the Practical Assignment on GitHub}
+
+To access the practical assignment, you should go into the \channel{\#announcements} channel in our Slack team and find
+the announcement that provides a link for it. Copy this link and paste it into your web browser. Now, you should accept
+the practical assignment and see that GitHub Classroom created a new GitHub repository for you to access the
+assignment's starting materials and to store the completed version of your assignment. Specifically, to access your new
+repository for this assignment, please click the green ``Accept'' button and then click the link that is prefaced with
+the label ``Your assignment has been created here''. If you accepted the assignment and correctly followed these steps,
+you should have created a repository with a name like
+``Allegheny-Computer-Science-103-Spring-2018/computer-science-103-spring-2018-practical-3-gkapfham''. Unless you provide
+the course instructor with documentation of the extenuating circumstances that you are facing, not accepting the
+assignment means that you automatically receive a failing grade for it.
+
+Before you move to the next step of this assignment, please make sure that you read all of the content on the web site
+for your new GitHub repository, paying close attention to the technical details about the commands that you will type
+and the output that your program must produce. Now you are ready to download the starting materials to your laboratory
+computer. Click the ``Clone or download'' button and, after ensuring that you have selected ``Clone with SSH'', please
+copy this command to your clipboard. To enter your course directory you should now type \command{cd cs103S2018}. Next,
+you can type the command \command{ls} and see that there are files or directories inside of this directory. By typing
+\command{git clone} in your terminal and then pasting in the string that you copied from the GitHub site you will
+download all of the code for this assignment. For instance, if the course instructor ran the \command{git clone} command
+in the terminal, it would look like:
+
+\begin{lstlisting}
+  git clone git@github.com:Allegheny-Computer-Science-103-S2018/computer-science-103-spring-2018-practical-3-gkapfham.git
+\end{lstlisting}
+
+After this command finishes, you can use \command{cd} to change into the new directory. What files and directories do
+you see? What do you think is their purpose? Please ask questions if you have any!
+
+\begin{figure}[t]
+  \centering
+
+  \begin{verbatim}
+      <ul>
+        <li><a href="about.html" target="_blank">About</a></li>
+        <li><a href="software.html" target="_blank">Software</a></li>
+      </ul>
+  \end{verbatim}
+
+  \vspace*{-.25in}
+  \begin{center}
+    (a) Create an unordered lists that has links that open in a new browser tab.
+  \end{center}
+
+  \begin{verbatim}
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="software.html">Software</a></li>
+      </ul>
+  \end{verbatim}
+
+  \vspace*{-.25in}
+  \begin{center}
+    (b) Create an unordered lists that has links that do not open in a new browser tab.
+  \end{center}
+
+  \caption{Segments of Correct HTML Source Code.}~\label{fig:correct}
+
+  \vspace*{-2em}
+
+\end{figure}
+
+\section*{Creating Ordered and Unordered Lists of Links}
+
+This practical assignment invites you to create ordered and unordered lists that
+link to other local files in a web site. Before you start to create these lists
+you should first include the cascading style sheet (CSS) files that you used in
+the previous laboratory assignment. Now, you are ready to create the lists that
+will link to the \program{about.html} and \program{software.html} files.
+Specifically, you will create both ordered and unordered lists that have links
+that both do and do not open in a new browser tab. For instance,
+Figure~\ref{fig:correct} furnishes an example of HTML source code segments that
+will create unordered lists with links that both do and do not open in different
+tabs. Can you add this source code to the correct location in the
+\mainprogramsource{} file? You will also need to ensure that the default
+document contains an ordered list that links to the same HTML files in the same
+fashion. Finally, don't forget to use the \command{<footer>} tag to add at least
+two emoji and your name to the bottom of the web site. In summary, you can learn
+what code you need to add to the \mainprogram{} file by reading all of the
+\command{TODO} comments in the source code and talking with the instructor.
+
+You can now run your web server by typing the command \command{serve src/www
+4250}. At this point, you can start your web browser and go to the web site
+\url{http://localhost:4250/}. Does your new web site look correct? Can you see
+the lists? Do the links work? Do the emoji correctly appear in the footer? If
+not, then continue to edit and convert it until the files are correct. Since
+this is our third practical assignment and you are still learning how to use the
+appropriate hardware and software, don't become frustrated if you make a
+mistake. Instead, use your mistakes as an opportunity for learning both about
+the necessary web development technology and the background and expertise of the
+other students in the class, the teaching assistants, and the course instructor.
+
+\section*{Checking the Correctness of Your Web Site and Writing}
+
+The Markdown file that contains your reflection must adhere to the standards
+described in the Markdown Syntax Guide
+\url{https://guides.github.com/features/mastering-markdown/}. Finally, your
+\mainprogram{} file should adhere to the Markdown standards established by the
+\step{Markdown linting} tool available at
+\url{https://github.com/markdownlint/markdownlint/} and the writing standards
+set by the \step{prose linting} tool from \url{http://proselint.com/}. Instead
+of requiring you to manually check that your deliverables adhere to these
+industry-accepted standards, the GatorGrader tool that you will use in this
+practical assignment makes it easy for you to automatically check if your
+submission meets the standards for correctness. For instance, GatorGrader will
+check to ensure that \mainprogram{} has the required number of unordered lists
+created with the \command{<ul>} code.
+
+To get started with the use of GatorGrader, type the command \gatorgraderstart{}
+in your terminal window. Once this step completes you can type
+\gatorgradercheck{}. If your work does not meet all of the assignment's
+requirements, then you will see the following output in your terminal:
+\command{Overall, are there any mistakes in the assignment? Yes}. If you do have
+mistakes in your assignment, then you will need to review GatorGrader's output,
+find the mistake, and try to fix it. Once your static web site displays
+correctly, fulfilling at least some of the assignment's requirements, you should
+transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands.
+For example, if you want to signal that the \mainprogramsource{} file has been
+changed and is ready for transfer to GitHub you would first type
+\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
+checking to see that the transfer to GitHub is successful. If you notice that
+transferring your code or writing to GitHub did not work correctly, then please
+read the messages in your terminal and try to determine why, asking a teaching
+assistant or the course instructor for assistance, if necessary.
+
+After the course instructor enables \step{continuous integration} with a system
+called Travis CI, when you use the \gitpush{} command to transfer your source
+code to your GitHub repository, Travis CI will initialize a \step{build} of your
+assignment, checking to see if it meets all of the requirements. If both your
+source code and writing meet all of the established requirements, then you will
+see a green \checkmark{} in the listing of commits in GitHub after awhile. If
+your submission does not meet the requirements, a red \naughtmark{} will appear
+instead. The instructor will reduce a student's grade for this assignment if the
+red \naughtmark{} appears on the last commit in GitHub immediately before the
+assignment's due date. Yet, if the green \checkmark{} appears on the last commit
+in your GitHub repository, then you satisfied all of the main checks, thereby
+allowing the course instructor to evaluate other aspects of your source code and
+writing, as further described in the \step{Evaluation} section of this
+assignment sheet. Unless you provide the instructor with documentation of the
+extenuating circumstances that you are facing, no late work will be considered
+towards your grade for this practical assignment.
+
+\section*{Summary of the Required Deliverables}
+
+\noindent Students do not need to submit printed source code or technical writing for any assignment in this course.
+Instead, this assignment invites you to submit, using GitHub, the following deliverables.
+
+\begin{enumerate}
+
+\setlength{\itemsep}{0in}
+
+\item A properly formatted and correct version of \mainprogramsource{} that both meets all of the established
+  requirements and produces the correct HTML and the desired static web site.
+
+\end{enumerate}
+
+\section*{Evaluation of Your Practical Assignment}
+
+Using a report that the instructor shares with you through the commit log in GitHub, you will privately received a grade
+on this assignment and feedback on your submitted deliverables. Your grade for the assignment will be a function of the
+whether or not it was submitted in a timely fashion and if your program received a green \checkmark{} indicating that it
+met all of the requirements. Other factors will also influence your final grade on the assignment. In addition to
+studying the efficiency and effectiveness of your Markdown source code, the instructor will also evaluate the accuracy of
+both your writing and the constructs in your source code. If your submission receives a red \naughtmark{}, the
+instructor will reduce your grade for the assignment while still considering the regularity with which you committed to
+your GitHub repository and the overall quality of your partially completed work. Please see the instructor if you have
+questions about the evaluation of this practical assignment.
+
+% \section*{Adhering to the Honor Code}
+
+% In adherence to the Honor Code, students should complete this assignment on an individual basis. While it is appropriate
+% for students in this class to have high-level conversations about the assignment, it is necessary to distinguish
+% carefully between the student who discusses the principles underlying a problem with others and the student who produces
+% assignments that are identical to, or merely variations on, someone else's work. Deliverables (e.g., HTML source code or
+% Markdown-based technical writing) that are nearly identical to the work of others will be taken as evidence of violating
+% the \mbox{Honor Code}. Please see the course instructor if you have questions about this policy.
+
+\end{document}
