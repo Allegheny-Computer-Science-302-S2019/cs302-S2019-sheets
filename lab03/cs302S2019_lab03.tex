@@ -4,12 +4,12 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{February 22}
-\newcommand{\assignmentassignedate}{February 15}
+\newcommand{\assignmentduedate}{February 18}
+\newcommand{\assignmentassignedate}{February 11}
 \newcommand{\assignmentnumber}{Four}
 
-\newcommand{\labyear}{2018}
-\newcommand{\labday}{Thursday}
+\newcommand{\labyear}{2019}
+\newcommand{\labday}{Monday}
 \newcommand{\labtime}{2:30 pm}
 
 \newcommand{\assigneddate}{Assigned: \labday, \assignmentassignedate, \labyear{} at \labtime{}}
@@ -27,8 +27,8 @@
 % Commands to describe key development tasks
 
 % --> Running gatorgrader.sh
-\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
-\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+\newcommand{\gatorgraderstart}{\command{gradle grade}}
+\newcommand{\gatorgradercheck}{\command{gradle grade}}
 
 % Commands to describe key git tasks
 
@@ -73,7 +73,7 @@ descriptive commit message"}}
 \pagestyle{fancy}
 
 \fancyhf{}
-\rhead{Computer Science 103}
+\rhead{Computer Science 302}
 \lhead{Laboratory Assignment \assignmentnumber{}}
 \rfoot{Page \thepage}
 \lfoot{\duedate}
@@ -86,8 +86,8 @@ descriptive commit message"}}
   \begin{center}
     \begin{center}
       \bf
-      CMPSC 103\\Web Development\\
-      Spring 2018\\
+      CMPSC 302\\Web Development\\
+      Spring 2019\\
       \medskip
     \end{center}
     \bf
@@ -108,8 +108,8 @@ assignment. Also, to learn more about using the Ubuntu operating system and
 software development programs such as a ``terminal window'' and an ``HTML
 linter''. Next, to learn how to write an HTML document that includes headers,
 content, and additional tags, specifically implementing an extended version of
-the``travel photographs'' example in Figure 3.9 of the textbook. You will extend
-your travel web site so that it has more advanced features such as the use
+the``travel photographs'' example in Figure 3.9 of the textbook. You will
+extend a travel web site so that it has more advanced features such as the use
 of \program{<blockquote>}, a customized style, and an emoji for each photograph
 review. Finally, you will learn more about running a web server and using an
 automated grading tool to assess your completion of a web development project.
@@ -119,51 +119,68 @@ automated grading tool to assess your completion of a web development project.
 \begin{itemize}
   \setlength{\itemsep}{0pt}
 
-\item {\bf Use the laboratory computers}. The computers in this laboratory feature specialized software for completing
-  this course's laboratory and practical assignments. If it is necessary for you to work on a different machine, be sure
-  to regularly transfer your work to a laboratory machine so that you can check its correctness. If you cannot use a
-  laboratory computer and you need help with the configuration of your own laptop, then please carefully explain its
-  setup to a teaching assistant or the course instructor when you are asking questions.
+\item {\bf Use the laboratory computers}. The computers in this laboratory
+  feature specialized software for completing this course's laboratory and
+  practical assignments. If it is necessary for you to work on a different
+  machine, be sure to regularly transfer your work to a laboratory machine so
+  that you can check its correctness. If you cannot use a laboratory computer
+  and you need help with the configuration of your own laptop, then please
+  carefully explain its setup to a teaching assistant or the course instructor
+  when you are asking questions.
 
-\item {\bf Follow each step carefully}. Slowly read each sentence in the assignment sheet, making sure that you
-  precisely follow each instruction. Take notes about each step that you attempt, recording your questions and ideas and
-  the challenges that you faced. If you are stuck, then please tell a teaching assistant or instructor what assignment
-  step you recently completed.
+\item {\bf Follow each step carefully}. Slowly read each sentence in the
+  assignment sheet, making sure that you precisely follow each instruction. Take
+  notes about each step that you attempt, recording your questions and ideas and
+  the challenges that you faced. If you are stuck, then please tell a teaching
+  assistant or instructor what assignment step you recently completed.
 
-\item {\bf Regularly ask and answer questions}. Please log into Slack at the start of a laboratory or practical session
-  and then join the appropriate channel. If you have a question about one of the steps in an assignment, then you can
-  post it to the designated channel. Or, you can ask a student sitting next to you or talk with a teaching assistant or
-  the course instructor.
+\item {\bf Regularly ask and answer questions}. Please log into Slack at the
+  start of a laboratory or practical session and then join the appropriate
+  channel. If you have a question about one of the steps in an assignment, then
+  you can post it to the designated channel. Or, you can ask a student sitting
+  next to you or talk with a teaching assistant or the course instructor.
 
-\item {\bf Store your files in GitHub}. Starting with this laboratory assignment, you will be responsible for storing
-  all of your files (e.g., JavaScript code and Markdown-based writing) in a Git repository using GitHub Classroom.
-  Please verify that you have saved your source code in your Git repository by using \command{git status} to ensure that
-  everything is updated. You can see if your assignment submission meets the established correctness requirements by
-  using the provided checking tools on your local computer and in checking the commits in GitHub.
+\item {\bf Store your files in GitHub}. Starting with this laboratory
+  assignment, you will be responsible for storing all of your files (e.g.,
+  JavaScript code and Markdown-based writing) in a Git repository using GitHub
+  Classroom. Please verify that you have saved your source code in your Git
+  repository by using \command{git status} to ensure that everything is updated.
+  You can see if your assignment submission meets the established correctness
+  requirements by using the provided checking tools on your local computer and
+  in checking the commits in GitHub.
 
-\item {\bf Keep all of your files}. Don't delete your programs, output files, and written reports after you submit them
-  through GitHub; you will need them again when you study for the quizzes and examinations and work on the other
+\item {\bf Keep all of your files}. Don't delete your programs, output files,
+  and written reports after you submit them through GitHub; you will need them
+  again when you study for the quizzes and examinations and work on the other
   laboratory, practical, and final project assignments.
 
-\item {\bf Back up your files regularly}. All of your files are regularly backed-up to the servers in the Department of
-  Computer Science and, if you commit your files regularly, stored on GitHub. However, you may want to use a flash
-  drive, Google Drive, or your favorite backup method to keep an extra copy of your files on reserve. In the event of
-  any type of system failure, you are responsible for ensuring that you have access to a recent backup copy of all your
-  files.
+\item {\bf Back up your files regularly}. All of your files are regularly
+  backed-up to the servers in the Department of Computer Science and, if you
+  commit your files regularly, stored on GitHub. However, you may want to use a
+  flash drive, Google Drive, or your favorite backup method to keep an extra
+  copy of your files on reserve. In the event of any type of system failure, you
+  are responsible for ensuring that you have access to a recent backup copy of
+  all your files.
 
-\item {\bf Explore teamwork and technologies}. While certain aspects of the laboratory assignments will be challenging
-  for you, each part is designed to give you the opportunity to learn both fundamental concepts in the field of computer
-  science and explore advanced technologies that are commonly employed at a wide variety of companies. To explore and
-  develop new ideas, you should regularly communicate with your team and/or the teaching assistants and tutors.
+\item {\bf Explore teamwork and technologies}. While certain aspects of the
+  laboratory assignments will be challenging for you, each part is designed to
+  give you the opportunity to learn both fundamental concepts in the field of
+  computer science and explore advanced technologies that are commonly employed
+  at a wide variety of companies. To explore and develop new ideas, you should
+  regularly communicate with your team and/or the teaching assistants and
+  tutors.
 
-\item {\bf Hone your technical writing skills}. Computer science assignments require to you write technical
-  documentation and descriptions of your experiences when completing each task. Take extra care to ensure that your
-  writing is interesting and both grammatically and technically correct, remembering that computer scientists must
-  effectively communicate and collaborate with their team members and the tutors, teaching assistants, and course
-  instructor.
+\item {\bf Hone your technical writing skills}. Computer science assignments
+  require to you write technical documentation and descriptions of your
+  experiences when completing each task. Take extra care to ensure that your
+  writing is interesting and both grammatically and technically correct,
+  remembering that computer scientists must effectively communicate and
+  collaborate with their team members and the tutors, teaching assistants, and
+  course instructor.
 
-\item {\bf Review the Honor Code on the syllabus}. While you may discuss your assignments with others, copying source
-  code or writing is a violation of Allegheny College's Honor Code.
+\item {\bf Review the Honor Code on the syllabus}. While you may discuss your
+  assignments with others, copying source code or writing is a violation of
+  Allegheny College's Honor Code.
 
 \end{itemize}
 
@@ -175,8 +192,8 @@ many of the features that GitHub provides. In particular, make sure that you
 have read guides such as ``Mastering Markdown'' and ``Documenting Your Projects
 on GitHub''; each of them will help you to understand how to use both GitHub and
 GitHub Classroom. To do well on this assignment, you should also read Chapters 1
-and 3 in the course textbook, paying close attention to Section 3.5, Figure 3.9
-and 3.16, and Table 3.1. Please see the course instructor or a teaching
+through 3 in the course textbook, paying close attention to Section 3.5, Figure
+3.9 and 3.16, and Table 3.1. Please see the course instructor or a teaching
 assistant if you have questions these reading assignments.
 
 \section*{Accessing the Laboratory Assignment on GitHub}
@@ -191,7 +208,7 @@ to access your new GitHub repository for this assignment, please click the green
 ``Accept'' button and then click the link that is prefaced with the label ``Your
 assignment has been created here''. If you accepted the assignment and correctly
 followed these steps, you should have created a repository with a name like
-``Allegheny-Computer-Science-103-Spring-2018/computer-science-103-spring-2018-lab-4-gkapfham''.
+``Allegheny-Computer-Science-302-Spring-2019/computer-science-302-spring-2019-lab-3-gkapfham''.
 Unless you provide the course instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it.
@@ -203,14 +220,14 @@ and the output that your program must produce. Now you are ready to download the
 starting materials to your laboratory computer. Click the ``Clone or download''
 button and, after ensuring that you have selected ``Clone with SSH'', please
 copy this command to your clipboard. To enter into your course directory you
-should now type \command{cd cs103S2018}. Now, by typing \command{git clone} in
+should now type \command{cd cs302S2019}. Now, by typing \command{git clone} in
 your terminal and then pasting in the string that you copied from the GitHub
 site you will download all of the code for this assignment. For instance, if the
 course instructor ran the \command{git clone} command in the terminal, it would
 look like:
 
 \begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-103-S2018/computer-science-103-spring-2018-lab-4-gkapfham.git
+  git clone git@github.com:Allegheny-Computer-Science-302-S2019/computer-science-302-spring-2019-lab-3-gkapfham.git
 \end{lstlisting}
 
 After this command finishes, you can use \command{cd} to change into the new
@@ -277,7 +294,7 @@ problems with a teaching assistant or the course instructor.
   \centering
   \begin{verbatim}
     <blockquote>
-      <p><b>By Ricardo on <time>February 8, 2018</time></b></p>
+      <p><b>By Ricardo on <time>February 8, 2019</time></b></p>
       <p>Wow, that is a great photograph. How did you take it?</p>
       <p>I would describe this photograph as <i class="em em---1"></i> </p>
     </blockquote>
@@ -324,10 +341,10 @@ reviews given below the photograph.
   Thin web server (v1.7.2 codename Bachmanity)
   Maximum connections set to 1024
   Listening on 0.0.0.0:4250, CTRL+C to stop
-  127.0.0.1 - - [15/Feb/2018 10:48:10] "GET / HTTP/1.1" 200 - 0.0021
-  127.0.0.1 - - [15/Feb/2018 10:48:11] "GET /css/github.css HTTP/1.1" 200 11629 0.0006
-  127.0.0.1 - - [15/Feb/2018 10:48:11] "GET /css/emoji.css HTTP/1.1" 200 390578 0.0012
-  127.0.0.1 - - [15/Feb/2018 10:48:11] "GET /img/plane.jpg HTTP/1.1" 200 22125 0.0005
+  127.0.0.1 - - [11/Feb/2019 10:48:10] "GET / HTTP/1.1" 200 - 0.0021
+  127.0.0.1 - - [11/Feb/2019 10:48:11] "GET /css/github.css HTTP/1.1" 200 11629 0.0006
+  127.0.0.1 - - [11/Feb/2019 10:48:11] "GET /css/emoji.css HTTP/1.1" 200 390578 0.0012
+  127.0.0.1 - - [11/Feb/2019 10:48:11] "GET /img/plane.jpg HTTP/1.1" 200 22125 0.0005
   \end{verbatim}
   \vspace*{-.35in}
   \caption{The Output From Running a Web Server.}~\label{fig:output}
