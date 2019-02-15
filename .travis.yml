@@ -10,6 +10,7 @@ script:
 - latexmk -pdf -outdir=_build practical01/cs302S2019_practical01.tex
 - latexmk -pdf -outdir=_build practical02/cs302S2019_practical02.tex
 - latexmk -pdf -outdir=_build practical03/cs302S2019_practical03.tex
+- latexmk -pdf -outdir=_build practical04/cs302S2019_practical04.tex
 deploy:
   provider: releases
   api_key:
@@ -21,6 +22,7 @@ deploy:
     - _build/cs302S2019_practical01.pdf
     - _build/cs302S2019_practical02.pdf
     - _build/cs302S2019_practical03.pdf
+    - _build/cs302S2019_practical04.pdf
   skip_cleanup: true
   on:
     tags: true
