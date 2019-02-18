@@ -401,22 +401,25 @@ laboratory assignment makes it easy for you to automatically check if your
 submission meets the standards for correctness. For instance, GatorGrader will
 check to ensure that \mainprogram{} has the required sections and photograph
 reviews.
+%
+GatorGrader will also ensure that you have removed all of the \program{TODO}
+markers from the provide source code files.
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{}
-in your terminal window. Once this step completes you can type
-\gatorgradercheck{}. If your work does not meet all of the assignment's
-requirements, then you will see the following output in your terminal:
-\command{Overall, are there any mistakes in the assignment? Yes}. If you do have
-mistakes in your assignment, then you will need to review GatorGrader's output,
-find the mistake, and try to fix it. Once your static web site displays
-correctly, fulfilling at least some of the assignment's requirements, you should
-transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands.
-For example, if you want to signal that the \mainprogramsource{} file has been
-changed and is ready for transfer to GitHub you would first type
-\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
-checking to see that the transfer to GitHub is successful. If you notice that
-transferring your files to GitHub did not work, then please read the terminal
-messages and try to determine why.
+in your terminal window. If you have mistakes in your assignment, then you will
+need to review GatorGrader's output, find the mistake, and try to fix it. Once
+your web page is displaying correctly, fulfilling at least some of the
+assignment's requirements, you should transfer your files to GitHub using the
+\gitcommit{} and \gitpush{} commands. For example, if you want to signal that
+the \mainprogramsource{} file has been changed and is ready for transfer to
+GitHub you would first type \gitcommitmainprogram{} in your terminal, followed
+by typing \gitpush{} to perform the transfer.
+%
+If you notice that transferring your files to GitHub did not work correctly,
+then please read the terminal messages and try to determine why.
+%
+Please see a teaching assistant or the course instructor if you have questions
+about any of these steps!
 
 \begin{figure}[t]
   \centering
@@ -465,7 +468,8 @@ site should match the screenshot provided in your GitHub repository.
 
 \item Stored in \reflection{}, a one-paragraph answer to all of the stated
   questions. For every challenge that you encountered, please explain your
-  solution for it.
+  solution for it. As requested, please make sure that you use inline source
+  code segments to support your responses.
 
 \item A properly formatted and correct version of \mainprogramsource{} that both
   meets all of the established requirements and contains the correct HTML and
