@@ -4,11 +4,11 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{May 4}
-\newcommand{\assignmentassignedate}{April 19}
+\newcommand{\assignmentduedate}{May 3}
+\newcommand{\assignmentassignedate}{February}
 \newcommand{\assignmentnumber}{Ten}
 
-\newcommand{\labyear}{2018}
+\newcommand{\labyear}{2019}
 \newcommand{\labday}{Thursday}
 \newcommand{\labdueday}{Friday}
 \newcommand{\labtime}{2:30 pm}
@@ -73,7 +73,7 @@
 \pagestyle{fancy}
 
 \fancyhf{}
-\rhead{Computer Science 103}
+\rhead{Computer Science 302}
 \lhead{Final Project}
 \rfoot{Page \thepage}
 \lfoot{\duedate}
@@ -86,8 +86,8 @@
   \begin{center}
     \begin{center}
       \bf
-      CMPSC 103\\Web Development\\
-      Spring 2018\\
+      CMPSC 302\\Web Development\\
+      Spring 2019\\
       \medskip
     \end{center}
     \bf
@@ -99,7 +99,7 @@
 
 \thispagestyle{empty}
 
-\labtitle{Final Project \\ \assigneddate{} \\ \duedate{}}
+\labtitle{Web Design Portfolio \\ \assigneddate{} \\ \duedate{}}
 
 \section*{Introduction}
 
@@ -192,8 +192,6 @@ submit a project proposal and a status update at the intermediate deadlines.
   this project with the students who are a member of your team. You should not
   share source code or images with students not in your team.
 
-% Students who leverage existing online content should
-
 \end{itemize}
 
 \vspace*{-.15in}
@@ -206,51 +204,7 @@ of this assignment. As we cover new material during the remainder of the
 semester (e.g., JavaScript programming), you are encouraged to review that
 content as it will better enable you to complete a high-quality final project.
 
-\section*{Accessing the Final Project Assignment on GitHub}
-
-The students in this class may form their own teams of three members; there
-should be no teams with two or four people unless they are approved by the
-course instructor. Once you pick your team members, you should designate one
-individual as the team leader who will complete certain critical steps that are
-given later in this assignment sheet. To access the laboratory assignment, you
-should first go into the \channel{\#announcements} channel in our Slack team and
-find the announcement that provides a link for it. Now, your team should look
-into the \channel{\#announcements} channel on Slack and claim the next available
-number for your team; share your team number in this channel.
-
-Next, the team leader (i.e., the person you chose to complete this step) will
-create their team with the name
-\command{Computer-Science-103-Spring-2018-Lab-10-Group-<group label>} and then
-accept the laboratory assignment and see that GitHub Classroom created a new
-GitHub repository for your team to access the assignment's starting materials
-and to store the completed version of your assignment. Note that the team leader
-will have to type their group and lab details into a text field. For instance,
-if the team leader was in the second group then that person would type ``Group 2
-for Lab 10'' into the text field. At this point, each additional member of the
-team can accept the assignment through GitHub. Please make sure that each of
-your team members joins the correct team---you must be in the team with your
-number. Unless you provide the instructor with documentation of the extenuating
-circumstances that you are facing, not accepting the assignment means that you
-automatically receive a failing grade for it. Please see the instructor with
-questions.
-
-Before you move to the next step of this assignment, please make sure that you
-read all of the content on the web site for your new GitHub repository, paying
-close attention to the technical details about the commands that you will type
-and any extra steps that you must take. Now you are ready to download the
-starting materials to your laboratory computer. Click the ``Clone or download''
-button and, after ensuring that you have selected ``Clone with SSH'', please
-copy this command to your clipboard. To enter the correct directory you should
-now type \command{cd cs103S2018}. Next, you can type the command \command{ls}
-and see that there are some files or directories inside of this directory. By
-typing \command{git clone} in your terminal and then pasting in the string that
-you copied from the GitHub site you will download all of the code for this
-assignment. For the previous example, a student would run a \command{git clone}
-command in the terminal in this fashion:
-
-\begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-103-S2018/computer-science-103-spring-2018-lab-10-group-2-for-lab-10.git
-\end{lstlisting}
+\section*{Creating the Web Site with Netlify and GitHub}
 
 After this command finishes, you can use \command{cd} to change into the new
 directory. If you want to \step{go back} one directory from your current
@@ -446,7 +400,7 @@ You must complete all of the aforementioned deliverables by the following due da
 
   \setlength{\itemsep}{0in}
 
-  \item {\bf Project Assigned and Project Proposal:} Thursday, April 19, 2018
+  \item {\bf Project Assigned and Project Proposal:} Thursday, April 19, 2019
 
     After meeting with the course instructor and team members, pick a topic for
     your final project. Remember, if your team selects the student-designed
@@ -458,14 +412,14 @@ You must complete all of the aforementioned deliverables by the following due da
     abstract, a description of the main idea, an initial listing of the tasks
     that you must complete, and a plan for completing the work.
 
-  \item {\bf Status Update and Project Demonstration}: Thursday, April 26, 2018
+  \item {\bf Status Update and Project Demonstration}: Thursday, April 26, 2019
 
     As you continue working on your project, please write and submit a one
     paragraph status update through your Git repository. In addition, you should
     give a demonstration, during the laboratory session, highlighting the most
     important source code that you have finished.
 
-  \item {\bf Final Project Due Date}: Friday, May 4, 2018 by 11:59 pm
+  \item {\bf Final Project Due Date}: Friday, May 4, 2019 by 11:59 pm
 
     You should submit the final version of your project through your team's
     GitHub repository. This submission should include all of the relevant source
