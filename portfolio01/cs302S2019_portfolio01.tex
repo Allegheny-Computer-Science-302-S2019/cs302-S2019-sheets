@@ -230,28 +230,59 @@ Ultimately, students are responsible for, in consultation with the course
 instructor, finding and understanding all of the technical resources that they
 need to complete their web design portfolio.
 
-\section*{Creating the Web Site with Netlify and GitHub}
+\section*{Creating a Web Site with Netlify and GitHub}
 
 To start this project, you should learn about the ``JAMStack'' and then visit a
 listing of web site templates that are available at
-\url{https://templates.netlify.com/}.
+\url{https://templates.netlify.com/}. After carefully studying each of these
+templates and the technologies that they will expect you to master, please pick
+one and follow its instructions to create your new GitHub repository deploy the
+first version of your web site to Netlify.
+%
+Students should also take care to install the Netlify GitHub app so that you can
+receive deploy summaries on your pull requests.
+%
+After the deploy finishes, check to make sure that your web site is live and
+working as expected.
+%
+Now, you are ready to customize your web site by giving it a project-specific
+uniform resource locator (URL). At this step you should also customize the name
+of your GitHub repository so that it is the same as the full name of your web
+site. For instance, the address of the instructor's web site is
+\url{https://www.gregorykapfhammer.com/} and it is hosted in the GitHub
+repository at \url{https://github.com/gkapfham/www.gregorykapfhammer.com}.
 
-After this command finishes, you can use \command{cd} to change into the new
+After you have changed the name of your repository, please clone it so that it
+is available on your workstation.
+%
+After the clone finishes, you can use \command{cd} to change into this new
 directory. If you want to \step{go back} one directory from your current
 location, then you can type the command \command{cd ..}. You may continue to use
 the \command{cd} and \command{ls} commands to explore the files that you
-automatically downloaded from GitHub. Please note that the course instructor
-expects students to implement and evaluate all of the source code needed to
-complete their proposed project. As such, there are no provided HTML, CSS, or
-JavaScript source code files for this assignment. With that said, you will need
-to edit, by the stated deadline, the three Markdown files in the
-\program{writing/} directory. Finally, you will need to submit, for instance,
-screenshots of your web site and reports on how your colleagues reacted to it.
-Here are some additional tips to assist you as you design, implement, and test
-the source code of the web site that you create for the final project:
+automatically downloaded from GitHub.
+%
+After ensuring that you fully understand the organization of the source code
+that emerges from your chosen template, please follow the ``GitHub Flow'' model
+to create a branch of your repository, make that branch available on GitHub,
+update at least one file in your branch, create a pull request, and then check
+the preview build created by Netlify.
+%
+If you are not sure how to take these steps in the terminal window and/or
+GitHub's web-based interface, please talk with the course instructor and review
+the aforementioned resources. Here are some extra tips:
+
+% Please note that the course instructor expects students to implement and
+% evaluate all of the source code needed to complete their proposed project. As
+% such, there are no provided HTML, CSS, or JavaScript source code files for
+% this assignment. With that said, you will need to edit, by the stated
+% deadline, the three Markdown files in the \program{writing/} directory.
+% Finally, you will need to submit, for instance, screenshots of your web site
+% and reports on how your colleagues reacted to it. Here are some additional
+% tips to assist you as you design, implement, and test the source code of the
+% web site that you create for the final project:
 
 \begin{itemize}
-  \setlength{\itemsep}{0in}
+  \setlength{\itemsep}{.1in}
 
   \item Make sure that your HTML, CSS, and JavaScript source code is organized
     into directories.
@@ -260,7 +291,8 @@ the source code of the web site that you create for the final project:
     programming standards.
 
   \item Unless you require a customized mobile-ready layout, consider using
-    Bootstrap for this task.
+    Bootstrap for this task or, alternatively, adopting the responsive design
+    framework associated with your chosen template.
 
   \item If you download and use images from Flickr or Instagram, give
     credit and the license details.
@@ -279,7 +311,25 @@ the source code of the web site that you create for the final project:
 
 \end{itemize}
 
-\section*{Description of the Topics}
+The next step for this project is to identify one aspect of the template that
+you want to customize. For instance, you might want to first focus on improving
+the fonts, colors, content, or header, footer, or overall layout. Ultimately,
+the final version of your web site should be fully customized and contain useful
+content that completely explores your theme. At the start of the project,
+though, you should focus on ensuring that you can make a change to your web
+site's source code and then see it reflected in the deployed version of your
+site.
+%
+While you are not required to do so, students who want to purchase their own
+domain names can collaborate with the instructor to ensure that their
+Netlify-hosted site is available under the domain that they purchased.
+
+At this point you have started your web design portfolio. You should now ensure
+that you schedule time every week to add to your portfolio, ensuring that it
+demonstrates your mastery of the technical skills in the field of web
+development and that you can submit it on time.
+
+\section*{Description of the Topics for the Design Portfolio}
 
 Each student is invited to pick one of the following projects. Please note that
 a student selecting the student-designed project must first discuss the idea
@@ -361,21 +411,28 @@ responsible for ensuring the feasibility of the final project that you propose.
 
 \section*{Final Project Requirements}
 
-To ensure that you and your team have mastered the concepts introduced in this
-course, your project's source code should adhere to the following requirements.
-These requirements may be modified, at the discretion of the course instructor,
-only if a team receives prior permission and documents this approval in the
-final report and the source code. Without prior approval, all submitted final
-projects should contain source code in the Markdown, HTML, CSS, and JavaScript
-programming languages. While it is acceptable to reuse source code from previous
-laboratory and practical assignments and online sources, the origin of all your
-derived code must be clearly documented. Critically, the majority of your final
-project's source code may not be comprised of work that you found in online
-sources or completed as part of a previous course assignment. Additionally, your
-web site must feature a mobile-ready design that you created with either bespoke
-CSS source code or through the use of a responsive web design framework like
-Bootstrap. Finally, your site must feature images that you appropriately stored
-inside of your GitHub repository.
+To ensure that you have mastered the concepts introduced in this course, your
+project's source code should adhere to the following requirements. These
+requirements may be modified, at the discretion of the course instructor, only
+if a student receives prior permission and documents this approval in the final
+report and the source code. Without prior approval, all submitted projects
+should contain source code in the Markdown, HTML, CSS, and JavaScript
+programming languages.
+%
+While it is acceptable to reuse source code from previous laboratory and
+practical assignments and online sources, the origin of all your derived code
+must be clearly documented. Critically, the majority of your project's source
+code may not be comprised of work that you found in online sources or completed
+as part of a previous course assignment.
+%
+Additionally, your web site must feature a mobile-ready design that you created
+with either bespoke CSS source code or through the use of a responsive web
+design framework like Bootstrap. Finally, your site must feature images that you
+appropriately stored inside of your GitHub repository.
+%
+Unless there is an extenuating reason that prevents you from doing so, your web
+site must be publicly available in a GitHub repository and hosted on Netlify;
+please see the instructor immediately if you cannot create a public site.
 
 \section*{Summary of the Required Deliverables}
 
@@ -397,29 +454,19 @@ to submit, using GitHub, the following deliverables.
 \item A one-page written proposal, saved in the file
   \program{writing/proposal.md}, with an informative title, an abstract, a
   description of the main idea, an initial listing of the tasks that you must
-  complete, and a plan that you and your team will follow to fully complete the
-  work.
+  complete, and a plan that you will follow to fully complete the work.
 
-\item A one-paragraph status update, saved in the file
-  \program{writing/update.md}, that explains what your team has already
-  implemented and the steps that you will take to finish your web site.
+\item Three two-paragraph status updates, saved in the appropriate Markdown
+  files, that explains what you have already implemented and the steps that you
+  will take to finish your web site.
 
 \item A detailed final project report, saved in the file
   \program{writing/report.md}, that documents, in a project-specific fashion,
   how you designed, implemented, tested, and evaluated your web site.
 
-\item Stored in \reflection{}, a four paragraph reflection on the commands that
-  you typed in \command{gvim} or \command{atom} and the terminal window. This
-  Markdown-based document should explain the input, output, and behavior of each
-  command or language construct and the challenges that you confronted when
-  using it. For every challenge that you encountered, please explain your
-  solution for it. This document should also explain how your team collaborated
-  to finish the assignment, with each team member writing their own paragraph
-  inside of this file.
-
 \item Stored in the \program{screenshots/} directory, a collection of five
   screenshots that showcase different aspects of your mobile-ready web site.
-  Your team should produce screenshots that highlight how your site behaves at
+  You should produce screenshots that highlight how your site behaves at
   different viewport widths (e.g., desktop, laptop, tablet, and phone).
 
 \item Stored in the \program{responses/} directory, a Markdown file called
@@ -438,17 +485,23 @@ You must complete all of the aforementioned deliverables by the following due da
 
   \setlength{\itemsep}{0in}
 
-  \item {\bf Project Assigned and Project Proposal:} Thursday, April 19, 2019
+  \item {\bf Project Assigned:} Friday, February 22, 2019
 
-    After meeting with the course instructor and team members, pick a topic for
-    your final project. Remember, if your team selects the student-designed
+    After meeting with the course instructor and the members of your class, pick
+    a topic for your final project. Remember, if you select the student-designed
     project, you must first have your project approved by the course instructor.
-    Next, make sure that you create a GitHub repository that can be accessed by
-    the instructor. Finally, write and submit a one-page proposal for your
-    project. While you can use the project descriptions on the previous pages as
-    a starting point, your proposal should have an informative title, an
-    abstract, a description of the main idea, an initial listing of the tasks
-    that you must complete, and a plan for completing the work.
+    Next, make sure that you create a public GitHub repository that contains
+    source code and web resources that can be hosted by Netlify.
+
+  \item {\bf Project Proposal and Plan:} Friday, March 8, 2019
+
+    Write and submit a one-page proposal for your project. While you can use the
+    project descriptions on the previous pages as a starting point, your
+    proposal should have an informative title, an abstract, a description of the
+    main idea, an initial listing of the tasks that you must complete, and a
+    plan for completing the work. While students are welcome to pick their own
+    theme for their web design portfolio, they must remember the importance of
+    receiving instructor approval for their own theme.
 
   \item {\bf Status Update and Project Demonstration}: Thursday, April 26, 2019
 
