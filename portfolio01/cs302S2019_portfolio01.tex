@@ -1,0 +1,545 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{May 4}
+\newcommand{\assignmentassignedate}{April 19}
+\newcommand{\assignmentnumber}{Ten}
+
+\newcommand{\labyear}{2018}
+\newcommand{\labday}{Thursday}
+\newcommand{\labdueday}{Friday}
+\newcommand{\labtime}{2:30 pm}
+\newcommand{\labduetime}{11:59 pm}
+
+\newcommand{\assigneddate}{Assigned: \labday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Due: \labdueday, \assignmentduedate, \labyear{} at \labduetime{}}
+
+% Edit this commands to describe key deliverables
+
+\newcommand{\reflection}{\lstinline{writing/reflection.md}}
+\newcommand{\timefile}{\lstinline{writing/time.md}}
+\newcommand{\colorfile}{\lstinline{writing/color.md}}
+\newcommand{\readme}{\lstinline{README.md}}
+
+% Commands to describe key development tasks
+
+% --> Running gatorgrader.sh
+\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
+\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+
+% --> Compiling and running program with gradle
+\newcommand{\gradlebuild}{\command{gradle build}}
+\newcommand{\gradlerun}{\command{gradle run}}
+
+% Commands to describe key git tasks
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 103}
+\lhead{Final Project}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\labtitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 103\\Web Development\\
+      Spring 2018\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\labtitle{Final Project \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Introduction}
+
+Throughout the semester, you have explored the fundamentals of web development,
+learning how to design and development mobile-ready web sites that contain, for
+instance, images and forms and use the Markdown, HTML, CSS, and JavaScript
+programming languages. This final project invites you to explore, in greater
+detail, a real-world application of web development. Specifically, you will
+design, implement, test, and evaluate a mobile-ready site that engages with
+international and/or intercultural perspectives and technologies. You will learn
+more about how to use, implement, test, and evaluate different types of software
+for real-world web sites. Since you will complete the final project with a team,
+you will also learn more about how GitHub and the Git version control system can
+effectively support the collaborative development of a web site. While this
+project only requires students to ensure that their web site is privately
+available, teams are encouraged to use GitHub Pages to release a public version
+of their site. Finally, all teams will invite their non-course colleagues to
+view their final web site and then report on and analyze the provided feedback.
+
+Your project should result in a detailed report that explains all of your source
+code, in addition to written materials and technical diagrams that highlight the
+key contributions of your work. This technical report should include a
+description of why the chosen topic is important and discuss the design,
+implementation, and testing that you undertook. The written material should be
+precise, formal, appropriately formatted, grammatically correct, informative,
+and interesting. The source code that you write must be carefully documented and
+tested. If you use existing resources (e.g., a Flickr image or a responsive
+design framework), then the steps for installation and use should be clearly
+documented in your report. Also, the report must explain the steps to run your
+own web server and view the web site. Finally, your report must detail the work
+completed by each member of your team; individual contributions should also be
+reflected in commits to the team's repository. In addition to writing the
+aforementioned final report in Markdown, you will also use Markdown to write and
+submit a project proposal and a status update at the intermediate deadlines.
+
+\section*{Suggestions for Success}
+
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+
+\item {\bf Use the laboratory computers}. The computers in this laboratory
+  feature specialized software for completing this course's laboratory and
+  practical assignments. If it is necessary for you to work on a different
+  machine, be sure to regularly transfer your work to a laboratory machine so
+  that you can check its correctness. If you cannot use a laboratory computer
+  and you need help with the configuration of your own laptop, then please
+  carefully explain its setup to a teaching assistant or the course instructor
+  when you are asking questions.
+
+\item {\bf Store your files in GitHub}. As in the past laboratory assignments,
+  you will be responsible for storing all of your files (e.g., HTML source code
+  and Markdown-based writing) in a Git repository using GitHub Classroom. Please
+  verify that you have saved your source code in your Git repository by using
+  \command{git status} to ensure that everything is updated. You can see if your
+  assignment submission meets the established correctness requirements by using
+  the provided checking tools on your local computer and by checking the commits
+  in GitHub.
+
+\item {\bf Back up your files regularly}. All of your files are regularly
+  backed-up to the servers in the Department of Computer Science and, if you
+  commit your files regularly, stored on GitHub. However, you may want to use a
+  flash drive, Google Drive, or your favorite backup method to keep an extra
+  copy of your files on reserve. In the event of any type of system failure, you
+  are responsible for ensuring that you have access to a recent backup copy of
+  all your files.
+
+\item {\bf Explore teamwork and technologies}. While certain aspects of the
+  final project will be challenging for you, each part is designed to give you
+  the opportunity to learn both fundamental concepts in the field of computer
+  science and explore advanced technologies that are commonly employed at a wide
+  variety of companies. To explore and develop new ideas, you should regularly
+  communicate with your team and/or the teaching assistants and tutors.
+
+\item {\bf Hone your technical writing skills}. Computer science assignments
+  require to you write technical documentation and descriptions of your
+  experiences when completing each task. Take extra care to ensure that your
+  writing is interesting and both grammatically and technically correct,
+  remembering that computer scientists must effectively communicate and
+  collaborate with their team members and the tutors, teaching assistants, and
+  course instructor.
+
+\item {\bf Review all of your past laboratory and practical assignments}. Now
+  that you have completed many prior assignments, please review all of your
+  prior work to ensure that you understand the concepts needed to explore
+  real-world applications of web development.
+
+\item {\bf Review the Honor Code on the syllabus}. While you may discuss your
+  assignments with others, copying source code or writing is a violation of
+  Allegheny College's Honor Code. Specifically, you should only collaborate on
+  this project with the students who are a member of your team. You should not
+  share source code or images with students not in your team.
+
+% Students who leverage existing online content should
+
+\end{itemize}
+
+\vspace*{-.15in}
+
+\section*{Reading Assignment}
+
+To ensure that you are best prepared to complete this final project, please
+review all of the chapters that we have covered up to and after the release date
+of this assignment. As we cover new material during the remainder of the
+semester (e.g., JavaScript programming), you are encouraged to review that
+content as it will better enable you to complete a high-quality final project.
+
+\section*{Accessing the Final Project Assignment on GitHub}
+
+The students in this class may form their own teams of three members; there
+should be no teams with two or four people unless they are approved by the
+course instructor. Once you pick your team members, you should designate one
+individual as the team leader who will complete certain critical steps that are
+given later in this assignment sheet. To access the laboratory assignment, you
+should first go into the \channel{\#announcements} channel in our Slack team and
+find the announcement that provides a link for it. Now, your team should look
+into the \channel{\#announcements} channel on Slack and claim the next available
+number for your team; share your team number in this channel.
+
+Next, the team leader (i.e., the person you chose to complete this step) will
+create their team with the name
+\command{Computer-Science-103-Spring-2018-Lab-10-Group-<group label>} and then
+accept the laboratory assignment and see that GitHub Classroom created a new
+GitHub repository for your team to access the assignment's starting materials
+and to store the completed version of your assignment. Note that the team leader
+will have to type their group and lab details into a text field. For instance,
+if the team leader was in the second group then that person would type ``Group 2
+for Lab 10'' into the text field. At this point, each additional member of the
+team can accept the assignment through GitHub. Please make sure that each of
+your team members joins the correct team---you must be in the team with your
+number. Unless you provide the instructor with documentation of the extenuating
+circumstances that you are facing, not accepting the assignment means that you
+automatically receive a failing grade for it. Please see the instructor with
+questions.
+
+Before you move to the next step of this assignment, please make sure that you
+read all of the content on the web site for your new GitHub repository, paying
+close attention to the technical details about the commands that you will type
+and any extra steps that you must take. Now you are ready to download the
+starting materials to your laboratory computer. Click the ``Clone or download''
+button and, after ensuring that you have selected ``Clone with SSH'', please
+copy this command to your clipboard. To enter the correct directory you should
+now type \command{cd cs103S2018}. Next, you can type the command \command{ls}
+and see that there are some files or directories inside of this directory. By
+typing \command{git clone} in your terminal and then pasting in the string that
+you copied from the GitHub site you will download all of the code for this
+assignment. For the previous example, a student would run a \command{git clone}
+command in the terminal in this fashion:
+
+\begin{lstlisting}
+  git clone git@github.com:Allegheny-Computer-Science-103-S2018/computer-science-103-spring-2018-lab-10-group-2-for-lab-10.git
+\end{lstlisting}
+
+After this command finishes, you can use \command{cd} to change into the new
+directory. If you want to \step{go back} one directory from your current
+location, then you can type the command \command{cd ..}. You may continue to use
+the \command{cd} and \command{ls} commands to explore the files that you
+automatically downloaded from GitHub. Please note that the course instructor
+expects students to implement and evaluate all of the source code needed to
+complete their proposed project. As such, there are no provided HTML, CSS, or
+JavaScript source code files for this assignment. With that said, you will need
+to edit, by the stated deadline, the three Markdown files in the
+\program{writing/} directory. Finally, you will need to submit, for instance,
+screenshots of your web site and reports on how your colleagues reacted to it.
+Here are some additional tips to assist your team while it designs, implements,
+and tests the source code of the web site that you create for the final project:
+
+\begin{itemize}
+  \setlength{\itemsep}{0in}
+  \item Make sure that your HTML, CSS, and JavaScript source code is organized
+    into directories.
+  \item Remember that all of your source code must meet well-established programming standards.
+  \item Unless you require a customized mobile-ready layout, consider using
+    Bootstrap for this task.
+  \item If you download and use images from Flickr or Instagram, give
+    credit and the license details.
+  \item Use the textbook's description of web development projects to
+    help you when brainstorming.
+  \item Recall that there are no GatorGrader checks for this assignment since each project is different.
+  \item In GatorGrader's absence, your team should establish correctness checks for your source code.
+  \item Importantly, your team should use ``linting'' tools to better ensure
+    source code correctness.
+\end{itemize}
+
+\section*{Description of the Topics}
+
+Each team is invited to pick one of the following projects. Please note that a
+team selecting the student-designed project must first discuss the idea with the
+course instructor, during today's laboratory session, and receive feedback and
+then final approval. Finally, please be aware that your team is fully
+responsible for ensuring the feasibility of the final project that it proposes.
+
+\begin{enumerate}
+
+  \setlength{\itemsep}{0in}
+
+  \item {\bf International Character Reference}: This topic invites your team to
+    investigate the Unicode standard for the consistent encoding and display of
+    most of the world's languages. Even though Unicode is documented through
+    several sites, such as \url{https://en.wikipedia.org/wiki/Unicode}, this
+    standard is lengthy and cumbersome to search and understand. If your team
+    picks this project, it can learn more about Unicode by reading Section 3.4
+    and then develop a site that enables people to, for instance, search for and
+    learn about specific characters. This web site should feature a responsive
+    layout ensuring that both Unicode character examples and the textual content
+    is visible on laptops, desktops, and mobile devices. Whenever possible, the
+    web site should enable user interactivity through, for instance, the
+    capability to display Unicode symbols in different colors or in boxes with
+    different backgrounds.
+
+  \item {\bf International Art Museum}: Develop an extension of the ``art
+    store'' project described in Sections 3.7, 4.8, and 7.9. Your web site
+    should feature examples of international art and then descriptions of both
+    the artists who created the work and the art itself. Your site should
+    feature a responsive layout displays both the art and the textual content on
+    laptops, desktops, and mobile devices. Whenever possible, the site should
+    support user interactivity through, for instance, an art discussion board or
+    a background choice for the featured artwork.
+
+  \item {\bf International Travel Site}: Your team should create an extension of
+    the ``travel photographs'' project described in, for example, Section 7.9.
+    This web site could feature photographs taken during international travel,
+    further explaining the cultural context that is documented by the
+    photograph. Additionally, the site can furnish tips for successful
+    international travel or publish interviews with travellers. Your web site
+    should feature a responsive layout ensuring that both the photographs and
+    the textual content is visible on laptops, desktops, and mobile devices.
+    Whenever possible, the site should enable user interactivity through, for
+    instance, a travel discussion board or a zooming display for the photographs.
+
+  \item {\bf International Country Site}: A team selecting this project will
+    create an extension of the ``countries database'' site given in the extended
+    example of Section 8.10. This site could feature the flag or some other
+    iconic image for each country. Additionally, the site can furnish important
+    facts about each of the chosen countries. Students who are interested in
+    this project can investigate the Gapminder web site, at
+    \url{https://www.gapminder.org}, for inspiration. This web site should
+    feature a responsive layout ensuring that both the images and the textual
+    content is visible on laptops, desktops, and mobile devices. Whenever
+    possible, the web site should enable user interactivity through, for
+    instance, a visualization of statistics about countries or a feature
+    supporting the uploading of images and details about a new country.
+
+  \item {\bf Intercultural Perspectives Survey}: Your team should create a
+    significant extension of the ``country survey'' form given in Section 5.4.
+    This web site could feature a survey that asks a person to share their views
+    on one or more cultural issues. This site could also present some of the
+    results from the individuals who have already taken the survey. This web
+    site should feature a responsive layout ensuring that both the images and
+    the textual content is visible on laptops, desktops, and mobile devices. A
+    team that picks this project should follow the advice in Section 5.5 to
+    ensure that their forms and tables are accessible to a wide range of people
+    (e.g., individuals who face visual or mobility challenges). If possible, the
+    site should enable user interactivity through, for instance, a visualization
+    of results from the survey.
+
+  \item {\bf Student-Designed Project}: Students will develop an idea for their
+    own project that focuses on both international or intercultural topics and
+    the field of web development. After receiving the course instructor's
+    approval for your idea, you will complete the project and report on it.
+
+\end{enumerate}
+
+\section*{Final Project Requirements}
+
+To ensure that you and your team have mastered the concepts introduced in this
+course, your project's source code should adhere to the following requirements.
+These requirements may be modified, at the discretion of the course instructor,
+only if a team receives prior permission and documents this approval in the
+final report and the source code. Without prior approval, all submitted final
+projects should contain source code in the Markdown, HTML, CSS, and JavaScript
+programming languages. While it is acceptable to reuse source code from previous
+laboratory and practical assignments and online sources, the origin of all your
+derived code must be clearly documented. Critically, the majority of your final
+project's source code may not be comprised of work that you found in online
+sources or completed as part of a previous course assignment. Additionally, your
+web site must feature a mobile-ready design that you created with either bespoke
+CSS source code or through the use of a responsive web design framework like
+Bootstrap. Finally, your site must feature images that you appropriately stored
+inside of your GitHub repository.
+
+\section*{Summary of the Required Deliverables}
+
+\noindent Students do not need to submit printed source code or technical
+writing for any assignment in this course. Instead, this assignment invites you
+to submit, using GitHub, the following deliverables.
+
+\vspace*{-0.05in}
+
+\begin{enumerate}
+
+  \setlength{\itemsep}{0in}
+
+\item Completed, fully commented, and properly formatted versions of all the
+  source code files. Please ensure that you source code adheres to all of the
+  requirements mentioned in this assignment sheet (e.g., the use of all the
+  required programming languages for web development).
+
+\item A one-page written proposal, saved in the file
+  \program{writing/proposal.md}, with an informative title, an abstract, a
+  description of the main idea, an initial listing of the tasks that you must
+  complete, and a plan that you and your team will follow to fully complete the
+  work.
+
+\item A one-paragraph status update, saved in the file
+  \program{writing/update.md}, that explains what your team has already
+  implemented and the steps that you will take to finish your web site.
+
+\item A detailed final project report, saved in the file
+  \program{writing/report.md}, that documents, in a project-specific fashion,
+  how you designed, implemented, tested, and evaluated your web site.
+
+\item Stored in \reflection{}, a four paragraph reflection on the commands that
+  you typed in \command{gvim} or \command{atom} and the terminal window. This
+  Markdown-based document should explain the input, output, and behavior of each
+  command or language construct and the challenges that you confronted when
+  using it. For every challenge that you encountered, please explain your
+  solution for it. This document should also explain how your team collaborated
+  to finish the assignment, with each team member writing their own paragraph
+  inside of this file.
+
+\item A commit log in your GitHub repository that clearly shows that the team
+  members effectively collaborated. That is, the commit log should show that
+  commits were evenly made by all team members; a meaningful photograph of each
+  member should appear in the commit log.
+
+\item Stored in the \program{screenshots/} directory, a collection of five
+  screenshots that showcase different aspects of your mobile-ready web site.
+  Your team should produce screenshots that highlight how your site behaves at
+  different viewport widths (e.g., desktop, laptop, tablet, and phone).
+
+\item Stored in the \program{responses/} directory, a Markdown file called
+  \program{feedback.md} that includes at least five direct quotations from
+  non-course Allegheny College students who interact with your mobile-ready
+  site. As previously described in the assignment sheet, you should run your web
+  site on a laboratory computer and then ask your colleagues to share some
+  feedback about it.
+
+\end{enumerate}
+
+\noindent
+You must complete all of the aforementioned deliverables by the following due dates:
+
+\begin{enumerate}
+
+  \setlength{\itemsep}{0in}
+
+  \item {\bf Project Assigned and Project Proposal:} Thursday, April 19, 2018
+
+    After meeting with the course instructor and team members, pick a topic for
+    your final project. Remember, if your team selects the student-designed
+    project, you must first have your project approved by the course instructor.
+    Next, make sure that you create a GitHub repository that can be accessed by
+    the instructor. Finally, write and submit a one-page proposal for your
+    project. While you can use the project descriptions on the previous pages as
+    a starting point, your proposal should have an informative title, an
+    abstract, a description of the main idea, an initial listing of the tasks
+    that you must complete, and a plan for completing the work.
+
+  \item {\bf Status Update and Project Demonstration}: Thursday, April 26, 2018
+
+    As you continue working on your project, please write and submit a one
+    paragraph status update through your Git repository. In addition, you should
+    give a demonstration, during the laboratory session, highlighting the most
+    important source code that you have finished.
+
+  \item {\bf Final Project Due Date}: Friday, May 4, 2018 by 11:59 pm
+
+    You should submit the final version of your project through your team's
+    GitHub repository. This submission should include all of the relevant source
+    code and output, the written reports, and the additional materials that will
+    demonstrate the success of your project. While you are encouraged to turn in
+    the final project before the examination session starts on its date,
+    students must submit the completed assignment no later than 11:59 pm on the
+    due date.
+
+\end{enumerate}
+
+\vspace*{-.1in}
+
+\section*{Evaluation of Your Final Project Submission}
+
+Using a report that the instructor shares with you through the commit log in
+GitHub, you will privately received a grade on this assignment and feedback on
+your submitted deliverables. Your grade for the assignment will be a function of
+the whether or not it was submitted in a timely fashion and if your repository
+contains correct versions of all of the required Markdown and source code files.
+Other factors will also influence your final grade on the assignment. Along with
+checking for the existence of the required images and the screenshots of your
+web site, the instructor will also evaluate the accuracy of both your technical
+writing and the comments in your source code. Please see the instructor if you
+have questions about the evaluation of this final project assignment.
+
+All team members will receive the same baseline grade for the final project. If
+there are extenuating circumstances in which one or more of the team members do
+not effectively collaborate to complete this assignment, then the course
+instructor will adjust the grade of specific team members so that it is higher
+or lower than the baseline grade, as is fair and necessary. Please see the
+instructor if you do not understand how he assigns grades for collaborative
+assignments. Finally, in adherence to the Honor Code, students should only
+complete this assignment with their team members. Deliverables (e.g., HTML code
+or Markdown-based technical writing) that are nearly identical to the work of
+outsiders of your team will be taken as evidence of violating the \mbox{Honor
+Code}. In summary, please see the course instructor with any questions about
+these policies for the final project.
+
+As previously noted, the instructor will also evaluate the effectiveness with
+which your team completed this assignment. The instructor will assess your
+team's effectiveness as {\bf excellent} when:
+
+\vspace*{-.5em}
+
+\begin{enumerate}
+  \setlength{\itemsep}{0pt}
+
+\item All team members contribute correct, useful source code and/or
+  Markdown documentation that supports the creation of a working and meaningful
+  mobile-ready web site.
+
+\item All team members participate in the laboratory discussions, sharing status
+  updates and ideas.
+
+\item All team members attend the classroom discussions about your current
+  status on the project.
+
+\item All team members regularly communicate with others in a respectful and
+  informative manner.
+
+\item All team members work with others and the instructor to resolve any
+  differences that arise.
+
+\end{enumerate}
+
+\vspace*{-.5em}
+
+The instructor will assess team effectiveness as {\bf good} when the team
+members fulfill the aforementioned standards most of the time. The team's
+effectiveness will be assessed as {\bf average} when some, but not the majority
+of the time, the team members make meaningful contributions to the project,
+according to these set standards. The course instructor will assess team
+effectiveness as {\bf below average} when, as a whole, the team does not
+function according to the above standards.
+
+\end{document}
