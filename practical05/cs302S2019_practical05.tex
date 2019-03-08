@@ -4,11 +4,11 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{March 5}
-\newcommand{\assignmentassignedate}{March 2}
+\newcommand{\assignmentduedate}{March 11}
+\newcommand{\assignmentassignedate}{March 8}
 \newcommand{\assignmentnumber}{Five}
 
-\newcommand{\labyear}{2018}
+\newcommand{\labyear}{2019}
 \newcommand{\labdueday}{Monday}
 \newcommand{\labassignday}{Friday}
 \newcommand{\labtime}{9:00 am}
@@ -21,11 +21,14 @@
 \newcommand{\mainprogram}{\lstinline{index.html}}
 \newcommand{\mainprogramsource}{\lstinline{src/www/index.html}}
 
+\newcommand{\mainimage}{\lstinline{travels_submission.png}}
+\newcommand{\mainimagesource}{\lstinline{images/travels_submission.png}}
+
 % Commands to describe key development tasks
 
 % --> Running gatorgrader.sh
-\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
-\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+\newcommand{\gatorgraderstart}{\command{gradle grade}}
+\newcommand{\gatorgradercheck}{\command{gradle grade}}
 
 % --> Compiling and running program with gradle
 \newcommand{\gradlebuild}{\command{gradle build}}
@@ -76,8 +79,8 @@ descriptive commit message"}}
 \pagestyle{fancy}
 
 \fancyhf{}
-\rhead{Computer Science 103}
-\lhead{Laboratory Assignment \assignmentnumber{}}
+\rhead{Computer Science 302}
+\lhead{Practical Assignment \assignmentnumber{}}
 \rfoot{Page \thepage}
 \lfoot{\duedate}
 
@@ -89,8 +92,8 @@ descriptive commit message"}}
   \begin{center}
     \begin{center}
       \bf
-      CMPSC 103\\Web Development\\
-      Spring 2018\\
+      CMPSC 302\\Web Development\\
+      Spring 2019\\
       \medskip
     \end{center}
     \bf
@@ -190,7 +193,7 @@ assignment's starting materials and to store the completed version of your assig
 repository for this assignment, please click the green ``Accept'' button and then click the link that is prefaced with
 the label ``Your assignment has been created here''. If you accepted the assignment and correctly followed these steps,
 you should have created a repository with a name like
-``Allegheny-Computer-Science-103-Spring-2018/computer-science-103-spring-2018-practical-5-gkapfham''. Unless you provide
+``Allegheny-Computer-Science-302-Spring-2019/computer-science-302-spring-2019-practical-5-gkapfham''. Unless you provide
 the course instructor with documentation of the extenuating circumstances that you are facing, not accepting the
 assignment means that you automatically receive a failing grade for it.
 
@@ -198,14 +201,14 @@ Before you move to the next step of this assignment, please make sure that you r
 for your new GitHub repository, paying close attention to the technical details about the commands that you will type
 and the output that your program must produce. Now you are ready to download the starting materials to your laboratory
 computer. Click the ``Clone or download'' button and, after ensuring that you have selected ``Clone with SSH'', please
-copy this command to your clipboard. To enter your course directory you should now type \command{cd cs103S2018}. Next,
+copy this command to your clipboard. To enter your course directory you should now type \command{cd cs302S2019}. Next,
 you can type the command \command{ls} and see that there are files or directories inside of this directory. By typing
 \command{git clone} in your terminal and then pasting in the string that you copied from the GitHub site you will
 download all of the code for this assignment. For instance, if the course instructor ran the \command{git clone} command
 in the terminal, it would look like:
 
 \begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-103-S2018/computer-science-103-spring-2018-practical-5-gkapfham.git
+  git clone git@github.com:Allegheny-Computer-Science-302-S2019/computer-science-302-spring-2019-practical-5-gkapfham.git
 \end{lstlisting}
 
 After this command finishes, you can use \command{cd} to change into the new directory. What files and directories do
@@ -227,7 +230,7 @@ you see? What do you think is their purpose? Please ask questions if you have an
       color: #333;
       width: 600px;
       border: solid #777;
-      border-width: 1pt 0pt 0pt 1pt;
+      border-width: 1pt 0 0 1pt;
       border-spacing: 0;
       margin: 30px;
       padding: 5px 5px 5px 5px;
@@ -245,7 +248,7 @@ you see? What do you think is their purpose? Please ask questions if you have an
 \section*{Repairing Mistakes in the HTML and CSS for a Web Site}
 
 This practical assignment invites you to repair a web site that contains
-incorrect HTML and CSS source code. You should use the \command{ htmlhint
+incorrect HTML and CSS source code. You should use the \command{htmlhint
 src/www/index.html} command and the GatorGrader tool to identify and fix all of
 the mistakes in the provided source code files. Figure~\ref{fig:correct} gives
 some examples of how the correct source code should look in the provided files.
@@ -284,21 +287,15 @@ header, four rows, and an alternating background. With that said, remember that
 these tools may not support the detection of all of the ten seeded defects!
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{}
-in your terminal window. Once this step completes you can type
-\gatorgradercheck{}. If your work does not meet all of the assignment's
-requirements, then you will see the following output in your terminal:
-\command{Overall, are there any mistakes in the assignment? Yes}. If you do have
-mistakes in your assignment, then you will need to review GatorGrader's output,
-find the mistake, and try to fix it. Once your static web site displays
-correctly, fulfilling at least some of the assignment's requirements, you should
-transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands.
-For example, if you want to signal that the \mainprogramsource{} file has been
-changed and is ready for transfer to GitHub you would first type
-\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
-checking to see that the transfer to GitHub is successful. If you notice that
-transferring your code or writing to GitHub did not work correctly, then please
-read the messages in your terminal and try to determine why, asking a teaching
-assistant or the course instructor for assistance, if necessary.
+in your terminal window. If you have mistakes in your assignment, then you will
+need to review GatorGrader's output, find the mistake, and try to fix it. Once
+your program is building correctly, fulfilling at least some of the assignment's
+requirements, you should transfer your files to GitHub using the \gitcommit{}
+and \gitpush{} commands. For example, if you want to signal that the
+\mainprogramsource{} file has been changed and is ready for transfer to GitHub
+you would first type \gitcommitmainprogram{} in your terminal, followed by
+typing \gitpush{} to perform the transfer. Please see the instructor if you
+cannot use GitHub.
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
@@ -319,8 +316,9 @@ towards your grade for this practical assignment.
 
 \section*{Summary of the Required Deliverables}
 
-\noindent Students do not need to submit printed source code or technical writing for any assignment in this course.
-Instead, this assignment invites you to submit, using GitHub, the following deliverables.
+\noindent Students do not need to submit printed source code or technical
+writing for any assignment in this course. Instead, this assignment invites you
+to submit, using GitHub, the following deliverables.
 
 \begin{enumerate}
 
@@ -333,6 +331,10 @@ Instead, this assignment invites you to submit, using GitHub, the following deli
 \item A properly formatted and correct version of all of the CSS files (e.g.,
   \program{site.css} and \program{table.css}) that correctly style the HTML tags
   and produce a web site meeting the requirements.
+
+\item A screenshot of your final web page, stored in the file
+  \mainimagesource{}, that shows the final graphical layout of your page and
+  demonstrates all of the required features.
 
 \end{enumerate}
 
