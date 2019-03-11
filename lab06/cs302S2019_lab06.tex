@@ -199,7 +199,7 @@ to access your new GitHub repository for this assignment, please click the green
 ``Accept'' button and then click the link that is prefaced with the label ``Your
 assignment has been created here''. If you accepted the assignment and correctly
 followed these steps, you should have created a repository with a name like
-``Allegheny-Computer-Science-302-Spring-2019/computer-science-302-spring-2019-lab-7-gkapfham''.
+``Allegheny-Computer-Science-302-Spring-2019/computer-science-302-spring-2019-lab-6-gkapfham''.
 Unless you provide the course instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it.
@@ -254,7 +254,7 @@ in the \program{<head>} region of the HTML source code?
   \centering
   \begin{verbatim}
     <!-- Follow instructions at https://formspree.io/ to start your form -->
-    <form action="https://formspree.io/gkapfham@allegheny.edu" method="POST">
+    <form action="https://formspree.io/YOUREMAIL@allegheny.edu" method="POST">
 
       <!-- Specify the server location to avoid page reload problems -->
       <input type="hidden" name="_next" value="http://localhost:4250/"/>
@@ -267,7 +267,7 @@ in the \program{<head>} region of the HTML source code?
     </form>
   \end{verbatim}
   \vspace*{-.35in}
-  \caption{The HTML Source Code for Create the Form that Interacts with Formspee.}~\label{fig:form}
+  \caption{The HTML Source Code to Create the Form that Interacts with Formspee.}~\label{fig:form}
   \vspace*{-.25in}
 \end{figure}
 
@@ -354,20 +354,20 @@ check to ensure that \mainprogram{} has the required sections and an
 interactive survey.
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{}
-in your terminal window. Once this step completes you can type
-\gatorgradercheck{}. If your work does not meet all of the assignment's
-requirements, then you will see the following output in your terminal:
-\command{Overall, are there any mistakes in the assignment? Yes}. If you do have
-mistakes in your assignment, then you will need to review GatorGrader's output,
-find the mistake, and try to fix it. Once your static web site displays
-correctly, fulfilling at least some of the assignment's requirements, you should
-transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands.
-For example, if you want to signal that the \mainprogramsource{} file has been
-changed and is ready for transfer to GitHub you would first type
-\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
-checking to see that the transfer to GitHub is successful. If you notice that
-transferring your files to GitHub did not work, then please read the terminal
-messages and try to determine why.
+in your terminal window. If you have mistakes in your assignment, then you will
+need to review GatorGrader's output, find the mistake, and try to fix it. Once
+your web page is displaying correctly, fulfilling at least some of the
+assignment's requirements, you should transfer your files to GitHub using the
+\gitcommit{} and \gitpush{} commands. For example, if you want to signal that
+the \mainprogramsource{} file has been changed and is ready for transfer to
+GitHub you would first type \gitcommitmainprogram{} in your terminal, followed
+by typing \gitpush{} to perform the transfer.
+%
+If you notice that transferring your files to GitHub did not work correctly,
+then please read the terminal messages and try to determine why.
+%
+Please see a teaching assistant or the course instructor if you have questions
+about any of these steps!
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
@@ -404,6 +404,10 @@ site should match the screenshot provided in your GitHub repository.
 \item A properly formatted and correct version of \mainprogramsource{} that both
   meets all of the established requirements and contains the correct HTML and
   the desired static web site.
+
+\item A properly formatted and correct version of \secondprogramsource{} that
+  both meets all of the established requirements and contains the correct CSS
+  for styling the table.
 
 \end{enumerate}
 
