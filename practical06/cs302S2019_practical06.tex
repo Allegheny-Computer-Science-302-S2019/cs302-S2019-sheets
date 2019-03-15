@@ -236,27 +236,11 @@ form control elements. Please refer to your GitHub repository for the details
 concerning all of the components that your web site must contain. With that
 said, it is important to note that your web site must use Formspree to control
 the submission of the form's data to your email address. Also, your form must
-contain certain critical elements such as text fields, text areas, radio
+contain certain useful elements such as text fields, text areas, radio
 buttons, checkboxes, and a submit button. In addition to talking with the
 instructor, students who are not sure how to create a form containing these
 elements should refer to a previous assignment, the textbook, additional online
 resources, and their course notes.
-
-% In particular, you will create an extended version of the
-% travel photographs web site that partially looks like the one in Figure 3.9. Now
-% you will include an HTML form that administers a survey about international
-% travel. Please refer to your GitHub repository for a screenshot that shows what
-% your final site should look like when completed. Additionally, please note that
-% this assignment still asks you to complete a site that contains an HTML table
-% that you style with CSS. Overall, you will need to read and resolve all of the
-% \command{TODO} markers in the provided HTML and CSS files. To start, you should
-% include the cascading style sheet (CSS) that controls, for instance, the font
-% sizes on the site. You can achieve this step by adding the code \program{<link
-% href="css/site.css" rel="stylesheet">} to the \program{<head>} region of the
-% \mainprogramsource{} file. Note that you also need to have another line of
-% source code to load the \program{emoji.css} and \program{table.css} files and
-% their features for further styling the web site. How would you write these lines
-% in the \program{<head>} region of the HTML source code?
 
 As you complete this practical assignment, you should regularly commit files to
 your GitHub repository, using the ``Git Cheat Sheet'' and the steps that you
@@ -275,11 +259,11 @@ correct. You should also ensure that, when you run the web server, it produces
 output suggesting that it is returning three CSS files and an image. If not,
 then please make sure that you revise your HTML source code and/or check the
 configuration of your web server. Specifically, please make sure that your web
-server is returning the \program{site.css} and \program{emoji.css} files that
-contain the styles for your HTML. Finally, when you are interacting with your
-web site you should verify the correctness of all components (e.g., certain
-links should open in a new browser tab and the form contains all of the required
-components for the interactive survey that reports by email using Formspree).
+server is returning the correct CSS files that contain the styles for your
+HTML. Finally, when you are interacting with your web site you should verify
+the correctness of all components (e.g., certain links should open in a new
+browser tab and the form contains all of the required components for the
+interactive survey that reports by email using Formspree).
 
 \section*{Checking the Correctness of Your Web Site}
 
@@ -291,20 +275,15 @@ instance, GatorGrader will check to ensure that \mainprogram{} has the required
 sections and an interactive survey with the expected number of form elements.
 
 To get started with the use of GatorGrader, type the command \gatorgraderstart{}
-in your terminal window. Once this step completes you can type
-\gatorgradercheck{}. If your work does not meet all of the assignment's
-requirements, then you will see the following output in your terminal:
-\command{Overall, are there any mistakes in the assignment? Yes}. If you do have
-mistakes in your assignment, then you will need to review GatorGrader's output,
-find the mistake, and try to fix it. Once your static web site displays
-correctly, fulfilling at least some of the assignment's requirements, you should
-transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands.
-For example, if you want to signal that the \mainprogramsource{} file has been
-changed and is ready for transfer to GitHub you would first type
-\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
-checking to see that the transfer to GitHub is successful. If you notice that
-transferring your files to GitHub did not work, then please read the terminal
-messages and try to determine why.
+in your terminal window. If you have mistakes in your assignment, then you will
+need to review GatorGrader's output, find the mistake, and try to fix it. Once
+your program is building correctly, fulfilling at least some of the assignment's
+requirements, you should transfer your files to GitHub using the \gitcommit{}
+and \gitpush{} commands. For example, if you want to signal that the
+\mainprogramsource{} file has been changed and is ready for transfer to GitHub
+you would first type \gitcommitmainprogram{} in your terminal, followed by
+typing \gitpush{} to perform the transfer. Please see the instructor if you
+cannot use GitHub.
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
