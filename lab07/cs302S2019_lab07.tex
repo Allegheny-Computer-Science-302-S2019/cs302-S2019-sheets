@@ -1,0 +1,556 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{April 5}
+\newcommand{\assignmentassignedate}{March 29}
+\newcommand{\assignmentnumber}{Eight}
+
+\newcommand{\labyear}{2018}
+\newcommand{\labday}{Thursday}
+\newcommand{\labtime}{2:30 pm}
+
+\newcommand{\assigneddate}{Assigned: \labday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Due: \labday, \assignmentduedate, \labyear{} at \labtime{}}
+
+% Edit these commands to give the name to the main program
+
+\newcommand{\mainprogram}{\lstinline{index.html}}
+\newcommand{\mainprogramsource}{\lstinline{src/www/index.html}}
+
+\newcommand{\secondprogram}{\lstinline{site.css}}
+\newcommand{\secondprogramsource}{\lstinline{src/www/css/site.css}}
+
+% Edit this commands to describe key deliverables
+
+\newcommand{\reflection}{\lstinline{writing/reflection.md}}
+\newcommand{\screenshot}{\lstinline{images/screenshot.png}}
+
+% Commands to describe key development tasks
+
+% --> Running gatorgrader.sh
+\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
+\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+
+% Commands to describe key git tasks
+
+% NOTE: Could be improved, problems due to nesting
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+\newcommand{\gitcommitmainprogram}{\command{git commit src/www/index.html -m "Your
+descriptive commit message"}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 103}
+\lhead{Laboratory Assignment \assignmentnumber{}}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\labtitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 103\\Web Development\\
+      Spring 2018\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\labtitle{Laboratory \assignmentnumber{} \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Objectives}
+
+As an investigation of the fundamentals of web media and a review of your
+previous work with the HTML and CSS languages, you will implement and test a
+comprehensive image gallery similar to the one that the book provides in Figure
+6.40. Specifically, you will learn how to use command-line image conversion and
+manipulation tools to create images that have different dimensions. You will
+then arrange these images into a gallery with a tabular format that is styled by
+appropriate CSS rules. While it is acceptable to use HTML tables to create your
+web site, students may optionally investigate the use of CSS layout rules, as
+described in Chapter 7, to design a flexible and responsive layout for their
+gallery of images. Finally, you will continue to practice running a web server
+and using software tools that support the implementation, testing, and debugging
+of a web site.
+
+\section*{Suggestions for Success}
+
+\begin{itemize}
+  \setlength{\itemsep}{0pt}
+
+\item {\bf Use the laboratory computers}. The computers in this laboratory feature specialized software for completing
+  this course's laboratory and practical assignments. If it is necessary for you to work on a different machine, be sure
+  to regularly transfer your work to a laboratory machine so that you can check its correctness. If you cannot use a
+  laboratory computer and you need help with the configuration of your own laptop, then please carefully explain its
+  setup to a teaching assistant or the course instructor when you are asking questions.
+
+\item {\bf Follow each step carefully}. Slowly read each sentence in the assignment sheet, making sure that you
+  precisely follow each instruction. Take notes about each step that you attempt, recording your questions and ideas and
+  the challenges that you faced. If you are stuck, then please tell a teaching assistant or instructor what assignment
+  step you recently completed.
+
+\item {\bf Regularly ask and answer questions}. Please log into Slack at the start of a laboratory or practical session
+  and then join the appropriate channel. If you have a question about one of the steps in an assignment, then you can
+  post it to the designated channel. Or, you can ask a student sitting next to you or talk with a teaching assistant or
+  the course instructor.
+
+\item {\bf Store your files in GitHub}. Starting with this laboratory assignment, you will be responsible for storing
+  all of your files (e.g., HTML and CSS code and Markdown-based writing) in a Git repository using GitHub Classroom.
+  Please verify that you have saved your source code in your Git repository by using \command{git status} to ensure that
+  everything is updated. You can see if your assignment submission meets the established correctness requirements by
+  using the provided checking tools on your local computer and in checking the commits in GitHub.
+
+\item {\bf Keep all of your files}. Don't delete your programs, output files, and written reports after you submit them
+  through GitHub; you will need them again when you study for the quizzes and examinations and work on the other
+  laboratory, practical, and final project assignments.
+
+\item {\bf Back up your files regularly}. All of your files are regularly backed-up to the servers in the Department of
+  Computer Science and, if you commit your files regularly, stored on GitHub. However, you may want to use a flash
+  drive, Google Drive, or your favorite backup method to keep an extra copy of your files on reserve. In the event of
+  any type of system failure, you are responsible for ensuring that you have access to a recent backup copy of all your
+  files.
+
+\item {\bf Explore teamwork and technologies}. While certain aspects of the laboratory assignments will be challenging
+  for you, each part is designed to give you the opportunity to learn both fundamental concepts in the field of computer
+  science and explore advanced technologies that are commonly employed at a wide variety of companies. To explore and
+  develop new ideas, you should regularly communicate with your team and/or the teaching assistants and tutors.
+
+\item {\bf Hone your technical writing skills}. Computer science assignments require to you write technical
+  documentation and descriptions of your experiences when completing each task. Take extra care to ensure that your
+  writing is interesting and both grammatically and technically correct, remembering that computer scientists must
+  effectively communicate and collaborate with their team members and the tutors, teaching assistants, and course
+  instructor.
+
+  % \item {\bf Review the Honor Code on the syllabus}. While you may discuss your
+  % assignments with others, copying source code or writing is a violation of
+  % Allegheny College's Honor Code.
+
+\end{itemize}
+
+\section*{Reading Assignment}
+
+If you have not done so already, please read all of the relevant ``GitHub
+Guides'', available at \url{https://guides.github.com/}, that explain how to use
+many of the features that GitHub provides. In particular, make sure that you
+have read guides such as ``Mastering Markdown'' and ``Documenting Your Projects
+on GitHub''; each of them will help you to understand how to use GitHub. To do
+well on this assignment, you should also review Chapters 1 and 5 in the course
+textbook, further studying the content on web media in Sections 6.1 through 6.4
+and Figure 6.40. Please see the course instructor or a teaching assistant if you
+have questions about these reading assignments.
+
+\section*{Accessing the Laboratory Assignment on GitHub}
+
+To access the laboratory assignment, you should go into the
+\channel{\#announcements} channel in our Slack team and find the announcement
+that provides a link for it. Copy this link and paste it into your web browser.
+Now, you should accept the laboratory assignment and see that GitHub Classroom
+created a new GitHub repository for you to access the assignment's starting
+materials and to store the completed version of your assignment. Specifically,
+to access your new GitHub repository for this assignment, please click the green
+``Accept'' button and then click the link that is prefaced with the label ``Your
+assignment has been created here''. If you accepted the assignment and correctly
+followed these steps, you should have created a repository with a name like
+``Allegheny-Computer-Science-103-Spring-2018/computer-science-103-spring-2018-lab-8-gkapfham''.
+Unless you provide the course instructor with documentation of the extenuating
+circumstances that you are facing, not accepting the assignment means that you
+automatically receive a failing grade for it.
+
+Before you move to the next step of this assignment, please make sure that you
+read all of the content on the web site for your new GitHub repository, paying
+close attention to the technical details about the commands that you will type
+and the content that must be evident in your web site. Now you are ready to
+download the starting materials to your laboratory computer. Click the ``Clone
+or download'' button and, after ensuring that you have selected ``Clone with
+SSH'', please copy this command to your clipboard. To enter into your course
+directory you should now type \command{cd cs103S2018}. Now, by typing
+\command{git clone} in your terminal and then pasting in the string that you
+copied from the GitHub site you will download all of the code for this
+assignment. For instance, if the course instructor ran the \command{git clone}
+command in the terminal, it would look like:
+
+\begin{lstlisting}
+  git clone git@github.com:Allegheny-Computer-Science-103-S2018/computer-science-103-spring-2018-lab-8-gkapfham.git
+\end{lstlisting}
+
+After this command finishes, you can use \command{cd} to change into the new
+directory. If you want to \step{go back} one directory from your current
+location, then you can type the command \command{cd ..}. Please continue to use
+the \command{cd} and \command{ls} commands to explore the files that you
+automatically downloaded from GitHub. What files and directories do (or, don't)
+you see? What do you think is their purpose? Please note that this laboratory
+assignment does not include any HTML, CSS, or media files. This is due to the
+fact that a key learning objective for this project is to ensure that you can
+successfully create your own bespoke web site using existing HTML and CSS source
+code.
+
+\section*{Creating and Testing an Image Gallery}
+
+\begin{figure}[t]
+  \centering
+
+  % FIRST TWO ROWS
+
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \begin{minipage}{1.75in}
+      \centering
+      \vspace*{.1in}
+      Small Image Called $I_1$ \\
+      Downloaded from Flickr \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} &
+    \begin{minipage}{1.75in}
+      \centering
+      \vspace*{.1in}
+      Size-Doubled Version of $I_1$ \\
+      Resized with \program{convert} \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} &
+    \begin{minipage}{1.75in}
+      \centering
+      \vspace*{.1in}
+      Size-Tripled Version of $I_1$ \\
+      Resized with \program{convert} \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} \\
+    \hline
+  \end{tabular}
+
+  \vspace*{.2in}
+
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \begin{minipage}{2in}
+      \centering
+      \vspace*{.1in}
+      Small Image Called $I_1$ \\
+      Downloaded from Flickr \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} &
+    \begin{minipage}{2in}
+      \centering
+      \vspace*{.1in}
+      Size-Doubled Version of $I_1$ \\
+      Resized with HTML or CSS \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} &
+    \begin{minipage}{2in}
+      \centering
+      \vspace*{.1in}
+      Size-Tripled Version of $I_1$ \\
+      Resized with HTML or CSS \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} \\
+    \hline
+  \end{tabular}
+
+  \vspace*{.2in}
+
+  % SECOND TWO ROWS
+
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \begin{minipage}{1.75in}
+      \centering
+      \vspace*{.1in}
+      Small Image Called $I_2$ \\
+      Downloaded from Flickr \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} &
+    \begin{minipage}{1.75in}
+      \centering
+      \vspace*{.1in}
+      Size-Doubled Version of $I_2$ \\
+      Resized with \program{convert} \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} &
+    \begin{minipage}{1.75in}
+      \centering
+      \vspace*{.1in}
+      Size-Tripled Version of $I_2$ \\
+      Resized with \program{convert} \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} \\
+    \hline
+  \end{tabular}
+
+  \vspace*{.2in}
+
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \begin{minipage}{2in}
+      \centering
+      \vspace*{.1in}
+      Small Image Called $I_2$ \\
+      Downloaded from Flickr \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} &
+    \begin{minipage}{2in}
+      \centering
+      \vspace*{.1in}
+      Size-Doubled Version of $I_2$ \\
+      Resized with HTML or CSS \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} &
+    \begin{minipage}{2in}
+      \centering
+      \vspace*{.1in}
+      Size-Tripled Version of $I_2$ \\
+      Resized with HTML or CSS \\
+      Display Resolution \\
+      Display Image Size
+      \vspace*{.1in}
+    \end{minipage} \\
+    \hline
+  \end{tabular}
+
+  \caption{{\bf A Conceptual Representation of the Image Gallery}. In this
+    example, the notation $I_1$ refers to an image with a ``portrait''
+    orientation while $I_2$ is an image with ``landscape'' orientation. The
+    second textual row in each box explains how you should resize the image
+    while the third row indicates that the image gallery should furnish the
+    image ``resolution'' as a height and a width. Similarly, the fourth row
+    means that the gallery should give the size of the image in kibibytes
+  (K).}~\label{fig:wireframe}
+
+  \vspace*{-.25in}
+
+\end{figure}
+
+Figure~\ref{fig:wireframe} provides a ``wireframe'' (i.e., a conceptual
+representation) of the image gallery that you are invited to implement and test
+for this laboratory assignment. Since certain aspects of your image gallery are
+similar to a project in the textbook, you should also review Figure 6.40 to
+learn more about the requirements for your web site. First, you should identify
+a small image, denoted $I_1$, that has a ``small'' resolution and is in a
+``portrait'' orientation. To create the first row in the image gallery, you
+should now use the \program{convert} program to resize $I_1$ so that it is
+double and triple its original size. Remember, to learn more about this program,
+you can type the command \program{man convert} in your terminal window and read
+this ``manual page'' to learn the command-line arguments.
+
+As indicated in Figure~\ref{fig:wireframe} and its caption, each image should be
+annotated with text that gives its ``resolution'' (i.e., the height and width of
+the image) and its file size in kibibytes. To discover an image's size in
+kibibytes, you can type the command \program{ls -lh} in the terminal window and
+then provide the name of your image file as an argument. You should also repeat
+all of these steps for image $I_2$ that has a ``landscape'' oriented. Finally,
+to organize your images into a grid, you can use HTML tables, as you implemented
+previously. Alternatively, students who want an extra challenge can use HTML and
+CSS source code to create a responsive layout for their grid of images.
+Ultimately, each student is responsible for using HTML and CSS to implement
+their own approach to arranging the labelled images so that they adhere to the
+grid-based structure in Figure~\ref{fig:wireframe}.
+
+Please notice that the second and fourth rows of the image gallery must feature
+images that are not resized using the \program{convert} program. Instead, you
+should learn how to resize images using HTML and/or CSS source code. Critically,
+you should think about the size in kibibytes of these ``resized'' images and
+consider the trade-offs associated with adopting one of these two different
+mechanisms for image resizing. Please don't forget that the second and fourth
+rows should still display, in a textual format, the details about the resolution
+and file size for these images. Finally, students should remember to check the
+correctness of their HTML by running the command \command{htmlhint
+src/www/index.html} in their terminal window. If the image gallery in your web
+site is incorrect, then please discuss the problems in your HTML or CSS with a
+teaching assistant or the instructor.
+
+Remember, you can run your web server by typing the command \command{serve
+src/www 4250}. At this point, you can start your web browser and go to the site
+\url{http://localhost:4250/}. Please check to see if your new web site looks
+correct. If it is not, then continue to edit and check it until the files are
+correct. You should also ensure that, when you run the web server, it produces
+output suggesting that it is returning the HTML and CSS files and all of the
+locally stored images (i.e., both $I_1$ and $I_2$ and all of the resized
+versions of these images). If not, then please make sure that you revise your
+HTML and/or CSS source code and/or check the configuration of your web server.
+Critically, students should note that, depending on how they organize their
+files, they may have to create directories in the ``root'' of their web server
+to contain, for instance, the images.
+
+% Please see the instructor if you have questions about the CSS or HTML code.
+
+As you complete this assignment, you should regularly commit files to your
+GitHub repository, using the ``Git Cheat Sheet'' and following the steps that
+are described in the next section. Also, note that your web server will require
+a dedicated terminal when it is running. After completing the assignment,
+reflect on the entire process. What step did you find to be the most
+challenging? You should write your reflections in a file, called \reflection{},
+that also uses Markdown. To complete this part of the assignment, you should
+write one high-quality paragraph that reports on your experiences. Now, verbally
+share your experiences with another class member and the instructor and at least
+one the teaching assistants! Finally, please take the time to answer the other
+questions in the \reflection{} file. For instance, make sure that you understand
+and can explain how the HTML and CSS files work together to format the site and
+enable the display of the (resized) images in a tabular format. You should also
+be able to explain how you used the \program{convert} and \program{ls} programs
+to correctly produce and understand your resized images.
+
+\section*{Checking the Correctness of Your Web Site and Writing}
+
+The Markdown file that contains your reflection must adhere to the standards
+described in the Markdown Syntax Guide
+\url{https://guides.github.com/features/mastering-markdown/}. Finally, your
+\reflection{} file should adhere to the Markdown standards established by the
+\step{Markdown linting} tool available at
+\url{https://github.com/markdownlint/markdownlint/} and the writing standards
+set by the \step{prose linting} tool from \url{http://proselint.com/}. Instead
+of requiring you to manually check that your deliverables adhere to these
+industry-accepted standards, the GatorGrader tool that you will use in this
+laboratory assignment makes it easy for you to automatically check if your
+submission meets the standards for correctness. For instance, GatorGrader will
+check to ensure that certain files and directories exist in your repository.
+Since this assignment asks you to independently create your source code,
+GatorGrader does not check for specific code.
+
+To get started with the use of GatorGrader, type the command \gatorgraderstart{}
+in your terminal window. Once this step completes you can type
+\gatorgradercheck{}. If your work does not meet all of the assignment's
+requirements, then you will see the following output in your terminal:
+\command{Overall, are there any mistakes in the assignment? Yes}. If you do have
+mistakes in your assignment, then you will need to review GatorGrader's output,
+find the mistake, and try to fix it. Once your static web site displays
+correctly, fulfilling at least some of the assignment's requirements, you should
+transfer your files to GitHub using the \gitcommit{} and \gitpush{} commands.
+For example, if you want to signal that the \mainprogramsource{} file has been
+changed and is ready for transfer to GitHub you would first type
+\gitcommitmainprogram{} in your terminal, followed by typing \gitpush{} and
+checking to see that the transfer to GitHub is successful. If you notice that
+transferring your files to GitHub did not work, then please read the terminal
+messages and try to determine why.
+
+After the course instructor enables \step{continuous integration} with a system
+called Travis CI, when you use the \gitpush{} command to transfer your source
+code to your GitHub repository, Travis CI will initialize a \step{build} of your
+assignment, checking to see if it meets all of the requirements. If both your
+source code and writing meet all of the established requirements, then you will
+see a green \checkmark{} in the listing of commits in GitHub after awhile. If
+your submission does not meet the requirements, a red \naughtmark{} will appear
+instead. The instructor will reduce a student's grade for this assignment if the
+red \naughtmark{} appears on the last commit in GitHub immediately before the
+assignment's due date. Yet, if the green \checkmark{} appears on the last commit
+in your GitHub repository, then you satisfied all of the main checks, thereby
+allowing the course instructor to evaluate other aspects of your source code and
+writing, as further described in the \step{Evaluation} section of this
+assignment sheet. Unless you provide the instructor with documentation of the
+extenuating circumstances that you are facing, no late work will be considered
+towards your grade for this laboratory assignment.
+
+\section*{Summary of the Required Deliverables}
+
+\noindent Students do not need to submit printed source code or technical
+writing for any assignment in this course. Instead, this assignment invites you
+to submit, using GitHub, the following deliverables. Overall, your submitted web
+site's image gallery should match the wireframe provided in
+Figure~\ref{fig:wireframe}.
+
+\vspace*{-.1in}
+
+\begin{enumerate}
+
+  \setlength{\itemsep}{0in}
+
+\item Stored in \reflection{}, a one-paragraph answer to all of the stated
+  questions. Additionally, for every challenge that you encountered, please
+  explain your solution for it.
+
+\item Stored in \screenshot{}, a PNG image that give the screenshot of the final
+  version of your web site. Note that you can use Ubuntu's ``print screen''
+  feature to produce this image.
+
+\item A properly formatted and correct version of \mainprogramsource{} and
+  \secondprogramsource{} that both meet all of the established requirements and
+  contain the correct HTML and CSS.
+
+\end{enumerate}
+
+\vspace*{-.15in}
+
+\section*{Evaluation of Your Laboratory Assignment}
+
+Using a report that the instructor shares with you through the commit log in
+GitHub, you will privately received a grade on this assignment and feedback on
+your submitted deliverables. Your grade for the assignment will be a function of
+the whether or not it was submitted in a timely fashion and if your program
+received a green \checkmark{} indicating that it met all of the requirements.
+Other factors will also influence your final grade on the assignment. In
+addition to studying the efficiency and effectiveness of your Markdown, the
+instructor will also evaluate the accuracy of both your technical writing and
+the contents of your source code. If your submission receives a red
+\naughtmark{}, the instructor will reduce your grade for the assignment while
+still considering the regularity with which you committed to your GitHub
+repository and the overall quality of your partially completed work. Please see
+the instructor if you have questions about the evaluation of this laboratory
+assignment.
+
+\end{document}
