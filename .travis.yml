@@ -18,6 +18,7 @@ script:
 - latexmk -pdf -outdir=_build practical05/cs302S2019_practical05.tex
 - latexmk -pdf -outdir=_build practical06/cs302S2019_practical06.tex
 - latexmk -pdf -outdir=_build portfolio01/cs302S2019_portfolio01.tex
+- latexmk -pdf -outdir=_build quiz01/cs302S2019_quiz01.tex
 deploy:
   provider: releases
   api_key:
@@ -37,6 +38,7 @@ deploy:
     - _build/cs302S2019_practical05.pdf
     - _build/cs302S2019_practical06.pdf
     - _build/cs302S2019_portfolio01.pdf
+    - _build/cs302S2019_quiz01.pdf
   skip_cleanup: true
   on:
     tags: true
