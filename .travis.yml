@@ -38,7 +38,7 @@ deploy:
     - _build/cs302S2019_practical05.pdf
     - _build/cs302S2019_practical06.pdf
     - _build/cs302S2019_portfolio01.pdf
-    - _build/cs302S2019_studyguide_quiz01.tex
+    - _build/cs302S2019_studyguide_quiz01.pdf
   skip_cleanup: true
   on:
     tags: true
