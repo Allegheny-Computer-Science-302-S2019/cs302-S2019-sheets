@@ -1,0 +1,354 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{March 16}
+\newcommand{\assignmentassignedate}{March 7}
+\newcommand{\assignmentnumber}{One}
+
+\newcommand{\labyear}{2018}
+\newcommand{\assignedday}{Wednesday}
+\newcommand{\dueday}{Friday}
+\newcommand{\labtime}{9:00 am}
+
+\newcommand{\assigneddate}{Announced: \assignedday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Quiz: \dueday, \assignmentduedate, \labyear{} at \labtime{}}
+
+% Edit this commands to describe key deliverables
+
+\newcommand{\reflection}{\lstinline{writing/reflection.md}}
+
+% Commands to describe key development tasks
+
+% --> Running gatorgrader.sh
+\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
+\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+
+% --> Compiling and running program with gradle
+\newcommand{\gradlebuild}{\command{gradle build}}
+\newcommand{\gradlerun}{\command{gradle run}}
+
+% Commands to describe key git tasks
+
+% NOTE: Could be improved, problems due to nesting
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/labone/DisplayOutput.java -m "Your
+descriptive commit message"}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 103}
+\lhead{Quiz \assignmentnumber{}}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\guidetitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 103\\Introduction to Web Development\\
+      Spring 2018\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\guidetitle{Quiz \assignmentnumber{} Study Guide \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Introduction}
+
+\noindent
+The quiz will be ``closed notes'' and ``closed book'' and it will cover the
+following materials. Please review the ``Course Schedule'' on the Web site for
+the course to see the content and slides that we have covered to this date.
+Students may post questions about this material to our Slack team.
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item Chapters One through Five in FWD, all sections (see online schedule for
+    complete details).
+
+  \item Using the commands in the terminal window (e.g., \program{cd} and
+    \program{ls}); creating and viewing web sites with Markdown, HTML, and CSS;
+    knowledge of the commands for using \program{git} and GitHub.
+
+  \item All of your class notes and the discussion slides available from the
+    course web site.
+
+  \item Source code and writing for laboratory assignments 1--7 and practical
+    assignments 1--6.
+
+\end{itemize}
+
+\noindent The quiz will be a mix of questions that have a form such as fill in
+the blank, short answer, true/false, and completion. The emphasis will be on the
+following topics:
+
+\vspace*{-.05in}
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item Concepts in web development and the HTML and CSS languages (e.g., key
+    definitions).
+
+  \item Practical laboratory techniques (e.g., creating, debugging, and viewing
+    web sites; effectively using files and directories; correctly using GitHub
+    through the command-line {\tt git} program).
+
+  \item Understanding Web sites (e.g., given a short, perhaps even one line,
+    source code segment written in Markdown, HTML, and/or CSS, understand what
+    it does and be able to precisely describe its resulting output as evident in
+    the web server logs or in the web browser).
+
+  \item Programming Markdown, HTML, and/or CSS statements in a web site, given a
+    description of a site's appearance and behavior. Students should be
+    completely comfortable with writing short source code statements that are in
+    a nearly correct form. While your web site may contain small syntactic
+    errors, it is not acceptable to ``make up'' features of the Markdown, HTML,
+    and CSS programming language that do not currently exist. Given a source
+    code segment you should also be able to sketch what a web site would look
+    like in a web browser.
+
+\end{itemize}
+
+\noindent No partial credit will be given for questions that are true/false,
+completion, or fill in the blank. Minimal partial credit may be awarded for the
+questions that require a student to write a short answer. You are strongly
+encouraged to write short, precise, and correct responses to all of the
+questions. When you are taking the quiz, you should do so as a ``point
+maximizer'' who first responds to the questions that you are most likely to
+answer correctly for full points. Please keep the time limitation in mind as you
+are absolutely required to submit the examination at the end of the class period
+unless you have written permission for extra time from a member of the Learning
+Commons. Students who do not submit their quiz on time will have their overall
+point total reduced. Finally, students may only reschedule the quiz for a
+different date or time if they are facing documented extenuating circumstances
+that prevent them from attending the scheduled time slot. Please see the course
+instructor if you have questions about any of these policies.
+
+\section*{Reminder Concerning the Honor Code}
+
+\noindent Students are required to fully adhere to the Honor Code during the
+completion of this quiz. More details about the Allegheny College Honor Code are
+provided on the syllabus. Students are strongly encouraged to carefully review
+the full statement of the Honor Code before taking this quiz. If you do not
+understand Allegheny College's Honor Code, then please schedule a meeting with
+the course instructor. The following is a review of the Honor Code statement
+from the course syllabus:
+
+\begin{quote}
+The Academic Honor Program that governs the entire academic program at
+Allegheny College is described in the Allegheny Academic Bulletin. The Honor
+Program applies to all work that is submitted for academic credit or to meet
+non-credit requirements for graduation at Allegheny College. This includes all
+work assigned for this class (e.g., examinations, laboratory assignments, and
+the final project). All students who have enrolled in the College will work
+under the Honor Program. Each student who has matriculated at the College has
+acknowledged the following pledge:
+\end{quote}
+
+\vspace*{-.15in}
+
+\begin{quote}
+  I hereby recognize and pledge to fulfill my responsibilities, as defined in
+  the Honor Code, and to maintain the integrity of both myself and the College
+  community as a whole.
+\end{quote}
+
+\section*{Detailed Review of Content}
+
+The listing of topics in the following subsections is not exhaustive; rather,
+it serves to illustrate the types of concepts that students should study as
+they prepare for the quiz. Please see the course instructor during office hours
+if you have questions about any of the content listed in this section.
+
+\vspace*{-.15in}
+
+\subsection*{Chapter One}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The similarities and differences between an intranet and the Internet
+  \item The similarities and differences between static and dynamic web sites
+  \item An understanding of the client-server model and the ``request-response''
+    loop
+  \item How networks, routers, and Internet service providers enable a
+    connection to a web site
+  \item The different roles and skills associated with the field of web development
+  \item A high-level understanding of the technologies used to create web sites
+  \item The role that a version control system plays in the development of a web
+    site
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Two}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item An intuitive understanding of the Internet protocols supporting a
+    connection to a web site
+  \item How the Domain Name System supports the registration of and the access
+    to a web site
+  \item The meaning, purpose, and structure of a uniform resource locator for a
+    web site
+  \item The role that web server ports play in furnishing access to a web site
+  \item Details concerning the hypertext transfer protocol (HTTP) and its
+    common response codes
+  \item A detailed understanding of the steps that a browser takes to parse HTML
+    and handle requests
+  \item Knowledge of the web server's activities and the terminal-based output
+    of a web server
+  \item The motivation for and ways in which both web browsers and servers employ
+    caching
+  \item A basic understanding of the various ``application stacks'' employed
+    by different web servers
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Three}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The term ``markup language'' and a historical understand of the
+    hypertext markup language
+  \item An understanding of the web-related terms ``tag'', ``markup'', ``data'',
+    and ``meta data''
+  \item Knowledge of the terms ``syntax'' and ``semantics'' and how they
+    connect to web development
+  \item Familiarity with the canonical structure of an HTML file that
+    uses cascading style sheets
+  \item An understanding of commonly used tags in an HTML file (e.g., \program{<head>},
+    \program{<p>}, and \program{<div>})
+  \item Given the directory tree for a web site, the ability to explain
+    different relative references
+  \item Strategies for include accessible images and international character
+    entities in web sites
+  \item The benefits associated with using semantic markup in the fifth version
+    of the HTML
+  \item How to appropriately use tools to support the development and
+    debugging of web sites
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Four}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The benefits of using cascading style sheets to style a web site
+  \item The relationship between the CSS and the HTML source code in a web site
+  \item The syntax and semantics of source code for declaring and applying CSS
+    styles
+  \item Knowledge of common CSS properties and the way in which they influence
+    a page's display
+  \item The rules that govern how CSS styles interact (e.g., inheritance,
+    specificity, and location)
+  \item The CSS box model and the use of margins and padding to influence a web
+    page's formatting
+  \item The way to use the ``TRBL'' shortcut to remind you how to control the
+    borders of elements
+  \item The ways to install, configure, and style fonts downloaded from Google's
+    font archive
+  \item An understanding of font sizes and the units of measurement used to
+    specify their size
+  \item How to appropriately use tools to support the development and
+    debugging of CSS files
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Five}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The way in which HTML tables support the organization of data into rows
+    and columns
+  \item The meaning and behavior of the HTML tags supporting the creation of 
+    tables
+  \item The similarities and differences between table headers, rows, and data
+    elements
+  \item The benefits and drawbacks associated with using tables for web page
+    layout
+  \item How to style HTML tables with CSS that changes, for instance, table
+    borders and backgrounds
+  \item An understanding of the CSS source code needed to create tables that
+    have a ``zebra effect''
+  \item The way to create interactive tables through the use of CSS-based
+    properties for hovering
+  \item The meaning and behavior of the HTML tags needed to create a form in a
+    web page
+  \item The similarities and differences in the appearance and behavior of form
+    control elements
+  \item Strategies for supporting forms in a static web site that does not have
+    access to a database
+  \item The challenges associated with creating date and time controls in a web
+    page's form
+  \item The motivation for and benefits of creating tables and forms that
+    support accessibility
+  \item How to appropriately use tools to support the development and
+    debugging of tables and forms
+
+\end{itemize}
+
+\end{document}
