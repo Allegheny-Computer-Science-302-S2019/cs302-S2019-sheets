@@ -4,11 +4,11 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{April 30}
-\newcommand{\assignmentassignedate}{April 27}
-\newcommand{\assignmentnumber}{Eight}
+\newcommand{\assignmentduedate}{April 22}
+\newcommand{\assignmentassignedate}{April 15}
+\newcommand{\assignmentnumber}{Nine}
 
-\newcommand{\labyear}{2018}
+\newcommand{\labyear}{2019}
 \newcommand{\labday}{Friday}
 \newcommand{\labdueday}{Monday}
 \newcommand{\labtime}{9:00 am}
@@ -17,6 +17,8 @@
 \newcommand{\duedate}{Due: \labdueday, \assignmentduedate, \labyear{} at \labtime{}}
 
 % Edit these commands to give the name to the main program
+
+\newcommand{\reflection}{\lstinline{writing/reflection.md}}
 
 \newcommand{\mainprogram}{\lstinline{index.html}}
 \newcommand{\mainprogramsource}{\lstinline{src/www/index.html}}
@@ -28,13 +30,13 @@
 \newcommand{\thirdprogramsource}{\lstinline{src/www/js/country.js}}
 
 \newcommand{\screenshot}{\lstinline{screenshot.png}}
-\newcommand{\screenshotsource}{\lstinline{images/screenshot.png}}
+\newcommand{\screenshotsource}{\lstinline{images/javascript\_submission.png}}
 
 % Commands to describe key development tasks
 
 % --> Running gatorgrader.sh
-\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
-\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+\newcommand{\gatorgraderstart}{\command{gradle grade}}
+\newcommand{\gatorgradercheck}{\command{gradle grade}}
 
 % Commands to describe key git tasks
 
@@ -79,8 +81,8 @@ descriptive commit message"}}
 \pagestyle{fancy}
 
 \fancyhf{}
-\rhead{Computer Science 103}
-\lhead{Practical Assignment \assignmentnumber{}}
+\rhead{Computer Science 302}
+\lhead{Laboratory Assignment \assignmentnumber{}}
 \rfoot{Page \thepage}
 \lfoot{\duedate}
 
@@ -92,8 +94,8 @@ descriptive commit message"}}
   \begin{center}
     \begin{center}
       \bf
-      CMPSC 103\\Web Development\\
-      Spring 2018\\
+      CMPSC 302\\Web Development\\
+      Spring 2019\\
       \medskip
     \end{center}
     \bf
@@ -105,13 +107,13 @@ descriptive commit message"}}
 
 \thispagestyle{empty}
 
-\labtitle{Practical \assignmentnumber{} \\ \assigneddate{} \\ \duedate{}}
+\labtitle{Laboratory \assignmentnumber{} \\ \assigneddate{} \\ \duedate{}}
 
 \section*{Objectives}
 
 As a step towards learning more about JavaScript and how it relates to HTML and
 CSS, you will create your own version of the ``Extended Example'' that starts on
-page 383 of the textbook. Specifically, your web site will feature ten
+page 383 of the textbook. Specifically, your web site will feature five
 rectangular boxes, each with dark grey borders, that have the flag of a country
 and then the required details about that country. Unlike in other assignments,
 you will use JavaScript to automatically generate the HTML source code that
@@ -168,9 +170,9 @@ links to images.
   effectively communicate and collaborate with their team members and the tutors, teaching assistants, and course
   instructor.
 
-\item {\bf Review the Honor Code on the syllabus}. While you may discuss your
-  assignments with others, copying source code or writing is a violation of
-  Allegheny College's Honor Code.
+% \item {\bf Review the Honor Code on the syllabus}. While you may discuss your
+%   assignments with others, copying source code or writing is a violation of
+%   Allegheny College's Honor Code.
 
 \end{itemize}
 
@@ -190,7 +192,7 @@ auxiliary materials that they need to successfully design the requested web
 site. Please see the course instructor or a teaching assistant if you have
 questions about these reading assignments.
 
-\section*{Accessing the Practical Assignment on GitHub}
+\section*{Accessing the Laboratory Assignment on GitHub}
 
 To access the laboratory assignment, you should go into the
 \channel{\#announcements} channel in our Slack team and find the announcement
@@ -202,7 +204,7 @@ to access your new GitHub repository for this assignment, please click the green
 ``Accept'' button and then click the link that is prefaced with the label ``Your
 assignment has been created here''. If you accepted the assignment and correctly
 followed these steps, you should have created a repository with a name like
-``Allegheny-Computer-Science-103-Spring-2018/computer-science-103-spring-2018-practical-8-gkapfham''.
+``Allegheny-Computer-Science-302-Spring-2019/computer-science-302-spring-2018-lab-9-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it.
@@ -214,14 +216,14 @@ and the content that must be evident in your web site. Now you are ready to
 download the starting materials to your laboratory computer. Click the ``Clone
 or download'' button and, after ensuring that you have selected ``Clone with
 SSH'', please copy this command to your clipboard. To enter into your course
-directory you should now type \command{cd cs103S2018}. Now, by typing
+directory you should now type \command{cd cs302S2019}. Now, by typing
 \command{git clone} in your terminal and then pasting in the string that you
 copied from the GitHub site you will download all of the code for this
 assignment. For instance, if the course instructor ran the \command{git clone}
 command in the terminal, it would look like:
 
 \begin{lstlisting}
-  git clone git@github.com:Allegheny-Computer-Science-103-S2018/computer-science-103-spring-2018-practical-8-gkapfham.git
+  git clone git@github.com:Allegheny-Computer-Science-302-S2019/computer-science-302-spring-2018-lab-9-gkapfham.git
 \end{lstlisting}
 
 After this command finishes, you can use \command{cd} to change into the new
@@ -230,7 +232,7 @@ location, then you can type the command \command{cd ..}. Please continue to use
 the \command{cd} and \command{ls} commands to explore the files that you
 automatically downloaded from GitHub. What files and directories do you see? In
 what ways will you have to extend the JavaScript and HTML and add CSS?
-Ultimately, you should aim to make your web site look like an extended version
+Ultimately, you should aim to make your web site look like a completed version
 of the one that is displayed on page 383 of the textbook.
 
 \section*{Creating a Web Site that Displays Country Information}
@@ -273,28 +275,38 @@ studying your web site you should verify the correctness of all its components
 countries in total, including the flag, ISO-3166 country code, current capital,
 and an estimate of the current population).
 
-\section*{Checking the Correctness of Your Web Site}
+\section*{Checking the Correctness of Your Web Site and Technical Writing}
 
-Instead of requiring you to manually check that your deliverables adhere to the
-industry-accepted standards for web site programming, the GatorGrader tool that
-you will use in this laboratory assignment makes it easy for you to
-automatically check if your submission meets the standards for correctness. To
-get started with the use of GatorGrader, type the command \gatorgraderstart{} in
-your terminal window. Once this step completes you can type \gatorgradercheck{}.
-If your work does not meet all of the assignment's requirements, then you will
-see the following output in your terminal: \command{Overall, are there any
-mistakes in the assignment? Yes}. If you do have mistakes in your assignment,
-then you will need to review GatorGrader's output, find the mistake, and try to
-fix it. Once your static web site displays correctly, fulfilling at least some
-of the assignment's requirements, you should transfer your files to GitHub using
-the \gitcommit{} and \gitpush{} commands. For example, if you want to signal
-that the \mainprogramsource{} file has been changed and is ready for transfer to
+The Markdown file that contains your reflection must adhere to the standards
+described in the Markdown Syntax Guide
+\url{https://guides.github.com/features/mastering-markdown/}. Finally, your
+\reflection{} file should adhere to the Markdown standards established by the
+\step{Markdown linting} tool available at
+\url{https://github.com/markdownlint/markdownlint/} and the writing standards
+set by the \step{prose linting} tool from \url{http://proselint.com/}. Instead
+of requiring you to manually check that your deliverables adhere to these
+industry-accepted standards, the GatorGrader tool that you will use in this
+laboratory assignment makes it easy for you to automatically check if your
+submission meets the standards for correctness. For instance, GatorGrader will
+check to ensure that certain files and directories exist in your repository.
+Since this assignment asks you to independently create your source code,
+GatorGrader does not check for specific code.
+
+To get started with the use of GatorGrader, type the command \gatorgraderstart{}
+in your terminal window. If you have mistakes in your assignment, then you will
+need to review GatorGrader's output, find the mistake, and try to fix it. Once
+your web page is displaying correctly, fulfilling at least some of the
+assignment's requirements, you should transfer your files to GitHub using the
+\gitcommit{} and \gitpush{} commands. For example, if you want to signal that
+the \mainprogramsource{} file has been changed and is ready for transfer to
 GitHub you would first type \gitcommitmainprogram{} in your terminal, followed
-by typing \gitpush{} and checking to see that the transfer to GitHub is
-successful.
-
-% If you notice that transferring your files to GitHub did not work,
-% then please read the terminal messages and try to determine why.
+by typing \gitpush{} to perform the transfer.
+%
+If you notice that transferring your files to GitHub did not work correctly,
+then please read the terminal messages and try to determine why.
+%
+Please see a teaching assistant or the course instructor if you have questions
+about any of these steps!
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
@@ -316,12 +328,12 @@ towards your grade for this laboratory assignment.
 \section*{Summary of the Required Deliverables}
 
 \noindent To ensure that you can successfully create your own web sites that
-feature JavaScript, HTML, and CSS, this practical provides minimal HTML and
+feature JavaScript, HTML, and CSS, this laboratory provides minimal HTML and
 JavaScript source code and invites you to add many of the required features
-(e.g., new countries and flags). Students do not need to submit printed source
-code for this assignment. Instead, this assignment invites you to submit, using
-GitHub, the following deliverables. Please see the instructor if you have
-questions about this assignment's goals.
+(e.g., {\tt Country} objects and the flag images).
+
+% Please see the instructor if you have questions
+% about this assignment's goals.
 
 \vspace*{-.05in}
 
@@ -345,11 +357,14 @@ questions about this assignment's goals.
   site. Note that you can use Firefox's ``print web page'' feature to produce
   this screenshot.
 
+\item Stored in \reflection{}, a one-paragraph answer to all of the stated
+  questions. 
+
 \end{enumerate}
 
 \vspace*{-.1in}
 
-\section*{Evaluation of Your Practical Assignment}
+\section*{Evaluation of Your Laboratory Assignment}
 
 Using a report that the instructor shares with you through the commit log in
 GitHub, you will privately received a grade on this assignment and feedback on
