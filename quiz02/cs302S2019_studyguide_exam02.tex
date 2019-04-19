@@ -1,0 +1,573 @@
+\documentclass[11pt]{article}
+
+% NOTE: The "Edit" sections are changed for each assignment
+
+% Edit these commands for each assignment
+
+\newcommand{\assignmentduedate}{May 3}
+\newcommand{\assignmentassignedate}{April 30}
+\newcommand{\assignmentnumber}{Two}
+
+\newcommand{\labyear}{2018}
+\newcommand{\assignedday}{Monday}
+\newcommand{\dueday}{Thursday}
+\newcommand{\labtime}{9:00 am}
+
+\newcommand{\assigneddate}{Announced: \assignedday, \assignmentassignedate, \labyear{} at \labtime{}}
+\newcommand{\duedate}{Examination: \dueday, \assignmentduedate, \labyear{} at \labtime{}}
+
+% Edit this commands to describe key deliverables
+
+\newcommand{\reflection}{\lstinline{writing/reflection.md}}
+
+% Commands to describe key development tasks
+
+% --> Running gatorgrader.sh
+\newcommand{\gatorgraderstart}{\command{./gatorgrader.sh --start}}
+\newcommand{\gatorgradercheck}{\command{./gatorgrader.sh --check}}
+
+% --> Compiling and running program with gradle
+\newcommand{\gradlebuild}{\command{gradle build}}
+\newcommand{\gradlerun}{\command{gradle run}}
+
+% Commands to describe key git tasks
+
+% NOTE: Could be improved, problems due to nesting
+
+\newcommand{\gitcommitfile}[1]{\command{git commit #1}}
+\newcommand{\gitaddfile}[1]{\command{git add #1}}
+
+\newcommand{\gitadd}{\command{git add}}
+\newcommand{\gitcommit}{\command{git commit}}
+\newcommand{\gitpush}{\command{git push}}
+\newcommand{\gitpull}{\command{git pull}}
+
+\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/labone/DisplayOutput.java -m "Your
+descriptive commit message"}}
+
+% Use this when displaying a new command
+
+\newcommand{\command}[1]{``\lstinline{#1}''}
+\newcommand{\program}[1]{\lstinline{#1}}
+\newcommand{\url}[1]{\lstinline{#1}}
+\newcommand{\channel}[1]{\lstinline{#1}}
+\newcommand{\option}[1]{``{#1}''}
+\newcommand{\step}[1]{``{#1}''}
+
+\usepackage{pifont}
+\newcommand{\checkmark}{\ding{51}}
+\newcommand{\naughtmark}{\ding{55}}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+\usepackage{fancyhdr}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\rhead{Computer Science 103}
+\lhead{Examination \assignmentnumber{}}
+\rfoot{Page \thepage}
+\lfoot{\duedate}
+
+\usepackage{titlesec}
+\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\newcommand{\guidetitle}[1]
+{
+  \begin{center}
+    \begin{center}
+      \bf
+      CMPSC 103\\Introduction to Web Development\\
+      Spring 2018\\
+      \medskip
+    \end{center}
+    \bf
+    #1
+  \end{center}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\guidetitle{Examination \assignmentnumber{} Study Guide \\ \assigneddate{} \\ \duedate{}}
+
+\section*{Introduction}
+
+\noindent
+The exam will be ``closed notes'' and ``closed book'' and it will cover the
+following materials. Please review the ``Course Schedule'' on the Web site for
+the course to see the content and slides that we have covered to this date.
+Students may post questions about this material to our Slack team.
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item Chapters 1 through 9 and 20 in FWD, the specified sections (see online
+    schedule for details).
+
+  \item Using the commands in the terminal window (e.g., \program{cd} and
+    \program{ls}); creating and viewing web sites with Markdown, HTML, and CSS;
+    knowledge of the commands for using \program{git} and GitHub.
+
+  \item All of your class notes and the discussion slides available from the
+    course web site.
+
+  \item Source code and writing for laboratory assignments 1--9 and practical
+    assignments 1--8.
+
+\end{itemize}
+
+\noindent The exam will be a mix of questions that have a form such as fill in
+the blank, short answer, true/false, and/or completion. The emphasis will be on
+the following key topics:
+
+\vspace*{-.05in}
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item Web development concepts in Markdown, HTML, CSS, and JavaScript (e.g.,
+    key definitions).
+
+  \item Practical laboratory techniques (e.g., creating, debugging, and viewing
+    web sites; effectively using files and directories; correctly using GitHub
+    through the command-line {\tt git} program).
+
+  \item Understanding and fixing Web sites (e.g., given a short, perhaps even
+    one line, source code segment written in Markdown, HTML, and/or CSS,
+    understand what it does and be able to precisely describe its resulting
+    output as evident in the web server logs or in the web browser).
+
+  \item Programming Markdown, HTML, JavaScript and/or CSS in a web site, given a
+    description of a site's appearance and behavior. Students should be
+    completely comfortable with writing short source code statements that are in
+    a nearly correct form. While your web site may contain small syntactic
+    errors, it is not acceptable to ``make up'' features of the Markdown, HTML,
+    JavaScript, and CSS languages that do not currently exist. Given a source
+    code segment you should also be able to sketch what a web site would look
+    like in a web browser.
+
+\end{itemize}
+
+\noindent No partial credit will be given for questions that are true/false,
+completion, or fill in the blank. Minimal partial credit may be awarded for the
+questions that require a student to write a short answer. You are strongly
+encouraged to write short, precise, and correct responses to all of the
+questions. When you are taking the exam, you should do so as a ``point
+maximizer'' who first responds to the questions that you are most likely to
+answer correctly for full points. Please keep the time limitation in mind as you
+are absolutely required to submit the examination at the end of the class period
+unless you have written permission for extra time from a member of the Learning
+Commons. Students who do not submit their exam on time will have their overall
+point total reduced. Finally, students may only reschedule the exam for a
+different date or time if they are facing documented extenuating circumstances
+that prevent them from attending the scheduled time slot. Please see the course
+instructor if you have questions about any of these policies.
+
+\section*{Reminder Concerning the Honor Code}
+
+\noindent Students are required to fully adhere to the Honor Code during the
+completion of this exam. More details about the Allegheny College Honor Code are
+provided on the syllabus. Students are strongly encouraged to carefully review
+the full statement of the Honor Code before taking this exam. If you do not
+understand Allegheny College's Honor Code, then please schedule a meeting with
+the course instructor. The following is a review of the Honor Code statement
+from the course syllabus:
+
+\begin{quote}
+The Academic Honor Program that governs the entire academic program at
+Allegheny College is described in the Allegheny Academic Bulletin. The Honor
+Program applies to all work that is submitted for academic credit or to meet
+non-credit requirements for graduation at Allegheny College. This includes all
+work assigned for this class (e.g., examinations, laboratory assignments, and
+the final project). All students who have enrolled in the College will work
+under the Honor Program. Each student who has matriculated at the College has
+acknowledged the following pledge:
+\end{quote}
+
+\vspace*{-.15in}
+
+\begin{quote}
+  I hereby recognize and pledge to fulfill my responsibilities, as defined in
+  the Honor Code, and to maintain the integrity of both myself and the College
+  community as a whole.
+\end{quote}
+
+\section*{Detailed Review of Content}
+
+The listing of topics in the following subsections is not exhaustive; rather, it
+serves to illustrate the types of concepts that students should study as they
+prepare for the examination. It is important to note that, by design, there is a
+significant overlap in technical topics between this examination and the prior
+mastery quiz. Please see the course instructor during office hours or a class
+session if you have questions about any of the content listed in the following
+subsections.
+
+\vspace*{-.15in}
+
+\subsection*{Chapter One}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The similarities and differences between an intranet and the Internet
+  \item The similarities and differences between static and dynamic web sites
+  \item An understanding of the client-server model and the ``request-response''
+    loop
+  \item How networks, routers, and Internet service providers enable a
+    connection to a web site
+  \item The different roles and skills associated with the field of web development
+  \item A high-level understanding of the technologies used to create web sites
+  \item The role that a version control system plays in the development of a web
+    site
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Two}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item An intuitive understanding of the Internet protocols supporting a
+    connection to a web site
+  \item How the Domain Name System supports the registration of and the access
+    to a web site
+  \item The meaning, purpose, and structure of a uniform resource locator for a
+    web site
+  \item The role that web server ports play in furnishing access to a web site
+  \item Details concerning the hypertext transfer protocol (HTTP) and its
+    common response codes
+  \item A detailed understanding of the steps that a browser takes to parse HTML
+    and handle requests
+  \item Knowledge of the web server's activities and the terminal-based output
+    of a web server
+  \item The motivation for and ways in which both web browsers and servers employ
+    caching
+  \item A basic understanding of the various ``application stacks'' employed
+    by different web servers
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Three}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The term ``markup language'' and a historical understand of the
+    hypertext markup language
+  \item An understanding of the web-related terms ``tag'', ``markup'', ``data'',
+    and ``meta data''
+  \item Knowledge of the terms ``syntax'' and ``semantics'' and how they
+    connect to web development
+  \item Familiarity with the canonical structure of an HTML file that
+    uses cascading style sheets
+  \item An understanding of commonly used tags in an HTML file (e.g., \program{<head>},
+    \program{<p>}, and \program{<div>})
+  \item Given the directory tree for a web site, the ability to explain
+    different relative references
+  \item Strategies for include accessible images and international character
+    entities in web sites
+  \item The benefits associated with using semantic markup in the fifth version
+    of the HTML
+  \item The ability to use semantic markup tags to create, for instance, figures
+    and figure captions
+  \item How to appropriately use tools to support the development and
+    debugging of web sites
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Four}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The benefits and potential challenges of using cascading style sheets to
+    style a web site
+  \item The relationship between the CSS and the HTML source code in a web site
+  \item The syntax and semantics of source code for declaring and applying CSS
+    styles
+  \item Knowledge of common CSS properties and the way in which they influence
+    a page's display
+  \item The rules that govern how CSS styles interact (e.g., inheritance,
+    specificity, and location)
+  \item The CSS box model and the use of margins and padding to influence a web
+    page's formatting
+  \item The way to use the ``TRBL'' shortcut to remind you how to control the
+    borders of elements
+  \item The ways to install, configure, and style fonts downloaded from Google's
+    font archive
+  \item An understanding of font sizes and the units of measurement used to
+    specify their size
+  \item The generic font families and how they connect the fonts provided by
+    Google's font archive
+  \item How use use both percentages and ``em units'' to specify the size of a
+    font on a web site
+  \item How to appropriately use tools to support the development and
+    debugging of CSS files
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Five}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The way in which HTML tables support the organization of data into rows
+    and columns
+  \item The meaning and behavior of the HTML tags supporting the creation of
+    tables
+  \item The similarities and differences between table headers, rows, and data
+    elements
+  \item The benefits and drawbacks associated with using tables for web page
+    layout
+  \item How to style HTML tables with CSS that changes, for instance, table
+    borders and backgrounds
+  \item An understanding of the CSS source code needed to create tables that
+    have a ``zebra effect''
+  \item The way to create interactive tables through the use of CSS-based
+    properties for hovering
+  \item The meaning and behavior of the HTML tags needed to create a form in a
+    web page
+  \item The similarities and differences in the appearance and behavior of form
+    control elements
+  \item Strategies for supporting forms in a static web site that does not have
+    access to a database
+  \item The challenges associated with creating date and time controls in a web
+    page's form
+  \item The motivation for and benefits of creating tables and forms that
+    support accessibility
+  \item How to appropriately use tools to support the development and
+    debugging of tables and forms
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Six}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item The similarities and differences (and trade-offs) between raster images
+    and vector images
+
+  \item The different models (e.g., RGB and HSB) that are available for
+    describing colors in web sites
+
+  \item Meaning of terms like opacity and gradient and knowledge of how
+    they connect to web sites
+
+  \item The specific CSS source code needed to programming gradients for regions
+    in web sites
+
+  \item A basic knowledge of the relationships between colors (e.g.,
+    complementary and analogous colors) and an understanding of tools that make
+    color schemes (e.g., \program{http://paletton.com})
+
+  \item The trade-offs (in, for instance, network bandwidth consumption or
+    perceived image quality) associated with resizing images using either a
+    conversion tool or HTML and CSS source code
+
+  \item The meaning ``display resolution'' and its connection to the monitor
+    size that displays a site
+
+  \item An understanding of the file formats (and extensions) used to store
+    images used on a web site
+
+  \item The knowledge of the similarities and differences between lossy and
+    lossless image compression
+
+  \item An understanding of now image bit-depth relates the quality of an image
+    displayed on a site
+
+  \item Knowledge of the trade-offs associated with methods for organizing web
+    media into a gallery
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Seven}
+
+\begin{itemize}
+
+  \itemsep 0in
+
+  \item An understanding of the term ``normal flow'' and how it influences the
+    layout of web elements
+
+  \item The ability to classify different HTML tags as being either block-level
+    or inline elements
+
+  \item Knowledge of both replaced inline and non-replaced inline elements and
+    how they are placed
+
+  \item Understanding of the similarities and differences associated with
+    relative and absolute position
+
+  \item The ability to write, understand, and debug CSS source code that
+    positions HTML elements
+
+  \item The knowledge of the reasons why it may be advantageous to put elements
+    in a fixed position
+
+  \item How to float HTML elements in either the entire web site or in a
+    specific container
+
+  \item The ability to understand and debug CSS source code that overlays and
+    hides HTML elements
+
+  \item A high-level understanding of the reasons why modern web sites need
+    multicolumn layouts
+
+  \item The similarities and differences between the terms ``fixed layout'' and
+    ``fluid layout''
+
+  \item Knowledge of the problems associated with viewing a web site that has a
+    fixed or fluid layout
+
+  \item Understanding the term ``viewport width'' and know why it is critical in
+    web development
+
+  \item The viewport widths for browsers that would run on desktop, laptop, and
+    mobile devices
+
+  \item Knowledge of the key principles and trade-offs associated with
+    responsive web design
+
+  \item An understanding of how media queries support the implementation of
+    mobile-ready sites
+
+  \item Examples of CSS frameworks (e.g., ``Twitter Bootstrap'') that support
+    responsive web design
+
+  \item Examples of the key features provided by CSS frameworks (e.g.,
+    grid-based content layout)
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Eight}
+
+\begin{itemize}
+
+  % \itemsep 0in
+
+  \item The history of JavaScript and how it is similar to and different from
+    other languages
+
+  \item Knowledge of the different places at which a programmer can embed
+    JavaScript source code
+
+  \item The challenges and solutions associated with handling browsers that do
+    not support JavaScript
+
+  \item The variable declaration methods and data types that are available for a
+    JavaScript program
+
+  \item The similarities and differences between primitive and reference data
+    types in JavaScript
+
+  \item An understanding of the inputs, outputs, and behavior of the JavaScript
+    methods for output
+
+  \item How the JavaScript programming language supports the implementation of
+    conditional logic
+
+  \item What is means if a variable in JavaScript is described as being either
+    ``truthy'' or ``falsy''.
+
+  \item The JavaScript constructs (e.g., {\tt while} loops) available for the
+    support of iterative computing
+
+  \item Understanding of a strategy for picking the most suitable iteration
+    construct for a web site
+
+  \item How to create, manipulate, and index arrays in the JavaScript
+    programming language
+
+  \item The ways in which JavaScript supports dynamically typed object-oriented programming
+
+  \item How to declare, invoke, and test a function in the JavaScript
+    programming language
+
+  \item Understanding of the term ``scope'' and how it influences the use of
+    variables in JavaScript
+
+  \item Detailed knowledge of the extended example's use of JavaScript to create
+    a country gallery
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Nine}
+
+\begin{itemize}
+
+  % \itemsep 0in
+
+  \item How the document object model (DOM) represents and supports the
+    change of a web site
+
+  \item The way in which DOM methods support the selection and modification of
+    HTML elements
+
+  \item How the JavaScript language supports the change of an both element's
+    style and content
+
+  \item Knowledge of an appropriate ordering that first loads and then modifies
+    the DOM tree
+
+  \item The meaning of the term ``event-driven programming'' and how it connects
+    to JavaScript
+
+  \item An understanding of the different events triggered by web site
+    interaction (e.g., {\tt click})
+
+  \item The ways in which JavaScript supports the verification of the content
+    input into a form
+
+\end{itemize}
+
+\vspace*{-.2in}
+\subsection*{Chapter Twenty}
+
+\begin{itemize}
+
+  \item Knowledge of the popularity and benefits of JavaScript and its
+    frameworks (e.g., Vue.js)
+
+  \item The ways in which JavaScript frameworks support the implementation of
+    interactive web sites
+
+  \item The benefits of using frameworks like AngularJS to create single-page
+    applications (SPAs)
+
+  \item How JavaScript frameworks adopt the model-view-controller model for
+    web programming
+
+  \item How JavaScript frameworks like Ionic and React-Native support
+    cross-platform development
+
+\end{itemize}
+
+\end{document}
